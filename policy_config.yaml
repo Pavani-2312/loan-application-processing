@@ -1,0 +1,68 @@
+# policy_config.yaml
+# Single source of truth for all scoring thresholds, band boundaries, and document rules.
+# Edit this file to update policy — no code changes required.
+# See docs/04_Data_Policy_Model.md §4 for full schema description.
+# See docs/03_Functional_Specification.md §2.2 for band evaluation rules.
+
+weights:
+  dti: 0.40
+  credit_history: 0.35
+  income_stability: 0.25  # combined = min(tenure_subscore, variability_subscore)
+
+bands:
+  # direction: max_asc  -> lower raw value is better; first entry where value <= max wins
+  # direction: min_desc -> higher raw value is better; first entry where value >= min wins
+  # Boundary rule: a value exactly on a boundary resolves to the BETTER-scoring adjacent band.
+  # e.g. DTI=0.40 exactly -> score 0.7 (moderate, not elevated); bureau=650 exactly -> score 0.7
+
+  dti:
+    direction: max_asc
+    entries:
+      - {max: 0.30, score: 1.0, clause: "3.1(a)"}
+      - {max: 0.40, score: 0.7, clause: "3.1(b)"}
+      - {max: 0.50, score: 0.4, clause: "3.1(c)"}
+      - {max: null, score: 0.0, clause: "3.1(d)"}
+
+  credit_history:
+    direction: min_desc
+    entries:
+      - {min: 720, score: 1.0, clause: "4.1(a)"}
+      - {min: 650, score: 0.7, clause: "4.1(b)"}
+      - {min: 580, score: 0.4, clause: "4.1(c)"}
+      - {min: null, score: 0.0, clause: "4.1(d)"}
+
+  # Income stability: two independently-scored sub-factors, combined via min()
+  income_stability_tenure_months:
+    direction: min_desc
+    entries:
+      - {min: 24, score: 1.0, clause: "5.1(a)"}
+      - {min: 12, score: 0.7, clause: "5.1(b)"}
+      - {min: 6,  score: 0.4, clause: "5.1(c)"}
+      - {min: null, score: 0.0, clause: "5.1(d)"}
+
+  income_stability_variability_pct:
+    direction: max_asc
+    entries:
+      - {max: 10,   score: 1.0, clause: "5.2(a)"}
+      - {max: 25,   score: 0.7, clause: "5.2(b)"}
+      - {max: 40,   score: 0.4, clause: "5.2(c)"}
+      - {max: null, score: 0.0, clause: "5.2(d)"}
+
+recommendation_bands:
+  approve_min: 0.75   # composite >= 0.75 -> APPROVE
+  refer_min: 0.65     # composite >= 0.65 -> REFER; composite < 0.65 -> DECLINE
+
+document_rules:
+  income_tolerance_pct: 15       # stated income must be within ±15% of bank deposit average
+  statement_max_age_days: 60     # bank statement period-end must be within 60 days of submission
+
+extraction_rules:
+  # Fields that block auto-scoring if extracted with low confidence.
+  # A low-confidence value on any of these triggers NEEDS_MANUAL_VERIFICATION.
+  scoring_relevant_fields:
+    - monthly_income
+    - stated_debt
+    - bureau_score
+    - employment_tenure_months
+    - deposit_amounts
+  low_confidence_action: NEEDS_MANUAL_VERIFICATION
