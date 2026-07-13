@@ -17,8 +17,35 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import chromadb
+from chromadb.utils.embedding_functions import EmbeddingFunction
 
 from src.config import get_chroma_dir
+
+
+# ---------------------------------------------------------------------------
+# Minimal embedding function that requires no model download.
+# Clause retrieval in this system is always by deterministic clause_id
+# (collection.get(ids=[clause_id])), never by semantic similarity.
+# We still need *some* embedding function to satisfy Chroma's API —
+# this one produces a fixed-length vector from the text hash so no
+# network access or model file is required.
+# ---------------------------------------------------------------------------
+class _HashEmbeddingFunction(EmbeddingFunction):
+    """Deterministic hash-based embeddings — no model download required."""
+
+    def __init__(self) -> None:
+        pass
+
+    def __call__(self, input: list[str]) -> list[list[float]]:  # noqa: A002
+        import hashlib
+        results = []
+        dim = 64
+        for text in input:
+            digest = hashlib.sha256(text.encode()).digest()
+            # Produce dim floats in [-1, 1] from the digest bytes
+            vec = [(b / 128.0) - 1.0 for b in digest[:dim]]
+            results.append(vec)
+        return results
 
 # ---------------------------------------------------------------------------
 # Policy clause corpus — exact text from docs/04_Data_Policy_Model.md §1
@@ -227,6 +254,7 @@ def seed(reset: bool = False) -> None:
     collection = client.get_or_create_collection(
         name="credit_policy_clauses",
         metadata={"hnsw:space": "cosine"},
+        embedding_function=_HashEmbeddingFunction(),
     )
 
     ids = []
