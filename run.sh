@@ -28,6 +28,14 @@ fi
 
 source .venv/bin/activate
 
+# Make the project root importable as 'src.*' — add a .pth file to site-packages.
+# This is idempotent: safe to re-run on every launch.
+SITE_PACKAGES=$(.venv/bin/python -c "import site; print(site.getsitepackages()[0])")
+echo "$SCRIPT_DIR" > "$SITE_PACKAGES/loan_app.pth"
+
+# Also export PYTHONPATH as a belt-and-suspenders fallback
+export PYTHONPATH="$SCRIPT_DIR"
+
 # --------------------------------------------------------------------------
 # Options
 # --------------------------------------------------------------------------
