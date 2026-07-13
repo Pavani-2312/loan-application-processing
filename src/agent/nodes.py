@@ -739,17 +739,25 @@ def audit_node(state: AgentState) -> dict[str, Any]:
     application_id = state.get("application_id")
     final_status = state.get("final_status")
 
-    # If an earlier node set a terminal error/halt status, don't overwrite it
-    terminal_error_statuses = {
+    # If an earlier node set a terminal halt/error status in state, respect it.
+    # Note: AWAITING_DOCUMENTS in state means intake detected missing docs (intake_complete=False).
+    # If intake_complete=True and final_status is None, we proceed to PENDING_HUMAN_REVIEW.
+    terminal_halt_statuses = {
         "AWAITING_DOCUMENTS", "INCONSISTENT_DOCUMENTS",
         "PROCESSING_ERROR", "POLICY_CONFIG_ERROR", "NEEDS_MANUAL_VERIFICATION",
     }
-    if final_status in terminal_error_statuses:
+    if final_status in terminal_halt_statuses:
         return {}
+
+    # Also guard against the DB already being in a terminal state from a prior run
+    non_reviewable_db_statuses = {
+        "INCONSISTENT_DOCUMENTS", "PROCESSING_ERROR",
+        "POLICY_CONFIG_ERROR", "DECIDED",
+    }
 
     with UnitOfWork(_get_session_factory()) as uow:
         app = uow.applications.get(application_id)
-        if app and app.status not in terminal_error_statuses:
+        if app and app.status not in non_reviewable_db_statuses:
             uow.applications.update_status(application_id, "PENDING_HUMAN_REVIEW", app.status_version)
         uow.commit()
 

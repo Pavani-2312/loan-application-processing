@@ -102,9 +102,14 @@ def record_human_decision(
 
         uow.commit()
 
+        # Read values before session closes to avoid DetachedInstanceError
+        decision_id = decision_row.decision_id
+        is_terminal = decision_row.is_terminal
+        matches_recommendation = decision_row.matches_recommendation
+
     return {
-        "decision_id": decision_row.decision_id,
-        "is_terminal": decision_row.is_terminal,
+        "decision_id": decision_id,
+        "is_terminal": is_terminal,
         "new_status": new_status,
-        "matches_recommendation": decision_row.matches_recommendation,
+        "matches_recommendation": matches_recommendation,
     }
