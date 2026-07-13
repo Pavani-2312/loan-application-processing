@@ -303,4 +303,4 @@ if st.button("📄 Generate Audit Package (HTML)", type="primary"):
 
 st.divider()
 if st.button("← Back to Audit Explorer"):
-    st.switch_page("src/app/pages/audit.py")
+    st.switch_page("pages/audit.py")

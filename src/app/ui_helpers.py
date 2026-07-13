@@ -105,9 +105,9 @@ def render_sidebar() -> tuple[str, str]:
         )
         st.divider()
 
-        st.page_link("src/app/main.py", label="📝 New Application", icon="📝")
-        st.page_link("src/app/pages/queue.py", label="📋 Review Queue", icon="📋")
-        st.page_link("src/app/pages/audit.py", label="🔎 Audit Explorer", icon="🔎")
+        st.page_link("main.py", label="📝 New Application", icon="📝")
+        st.page_link("pages/queue.py", label="📋 Review Queue", icon="📋")
+        st.page_link("pages/audit.py", label="🔎 Audit Explorer", icon="🔎")
 
     return underwriter_id, role
 

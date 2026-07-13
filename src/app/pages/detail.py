@@ -34,7 +34,7 @@ application_id = st.session_state.get("review_application_id")
 if not application_id:
     st.warning("No application selected. Go to the Review Queue.")
     if st.button("← Review Queue"):
-        st.switch_page("src/app/pages/queue.py")
+        st.switch_page("pages/queue.py")
     st.stop()
 
 factory = get_uow_factory()
@@ -407,4 +407,4 @@ else:
 
 st.divider()
 if st.button("← Back to Queue"):
-    st.switch_page("src/app/pages/queue.py")
+    st.switch_page("pages/queue.py")

@@ -176,7 +176,7 @@ else:
                 if st.button("🔍 View", key=f"audit_view_{r['full_id']}"):
                     st.session_state["review_application_id"] = r["full_id"]
                     st.session_state["audit_mode"] = True
-                    st.switch_page("src/app/pages/audit_detail.py")
+                    st.switch_page("pages/audit_detail.py")
 
 # ---------------------------------------------------------------------------
 # Bulk export (Credit Ops Lead only)

@@ -174,4 +174,4 @@ else:
 
                 if st.button(btn_label, key=f"review_{r['full_id']}"):
                     st.session_state["review_application_id"] = r["full_id"]
-                    st.switch_page("src/app/pages/detail.py")
+                    st.switch_page("pages/detail.py")

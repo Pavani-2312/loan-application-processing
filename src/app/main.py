@@ -192,7 +192,7 @@ if submitted:
     if final_status == "PENDING_HUMAN_REVIEW":
         st.success(f"✅ Processing complete. Application **{application_id[:8]}…** is ready for review.")
         st.session_state["review_application_id"] = application_id
-        st.switch_page("src/app/pages/detail.py")
+        st.switch_page("pages/detail.py")
     elif final_status == "AWAITING_DOCUMENTS":
         st.warning("⚠️ Some documents were not detected. Please re-upload the complete document set.")
     elif final_status == "NEEDS_MANUAL_VERIFICATION":
@@ -201,10 +201,10 @@ if submitted:
             "The application has been added to the queue."
         )
         st.session_state["review_application_id"] = application_id
-        st.switch_page("src/app/pages/detail.py")
+        st.switch_page("pages/detail.py")
     elif final_status == "INCONSISTENT_DOCUMENTS":
         st.error("❌ Document consistency checks failed. Please review the application in the queue.")
         st.session_state["review_application_id"] = application_id
-        st.switch_page("src/app/pages/detail.py")
+        st.switch_page("pages/detail.py")
     else:
         st.error(f"Processing ended with status: {final_status}. Check the Review Queue.")
