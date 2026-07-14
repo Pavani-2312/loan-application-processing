@@ -23,12 +23,12 @@ A lightweight role selector (`Underwriter` / `Credit Ops Lead`) sits in the side
 **Purpose:** capture a new application and hand it to the agent.
 
 **Layout:**
-- Left column: applicant form (name, address, requested amount, stated monthly income, stated monthly debt, employer, employment start date, free-text "application notes" field).
-- Right column: three file-uploader widgets, one per required document (ID, income proof, bank statement), each showing a green check once a file is attached.
+- Applicant form: name, address (identity fields only — all scoring-relevant fields are extracted by the agent from documents).
+- Three file-uploader widgets, one per required document (ID, income proof, bank statement), each showing a green check once a file is attached. Supports PDF (with text extraction via pypdf) and plaintext files.
 - Bottom: primary button **"Submit for Processing."** Disabled until all three files are attached (client-side nudge; the real presence check still runs server-side per FR-02).
 - On submit: spinner "Running intake → validation → scoring → fairness check…" while the LangGraph agent runs synchronously; on completion, auto-navigate to Application Detail for this application. Past ~20 seconds elapsed, the spinner adds: *"This can take up to a minute — you can navigate away and come back; progress is saved."* (per `02_Architecture.md`'s per-node durability/resumability design — a slow API call no longer risks losing prior steps.)
 
-**Why this shape:** keeps intake friction low while making the three-document requirement visually explicit before the applicant/officer even hits submit.
+**Why this shape:** keeps intake friction low while making the three-document requirement visually explicit before the applicant/officer even hits submit. All scoring data (income, DTI components, bureau score, tenure, variability) comes from document extraction, not form fields, which is why the form only collects identity.
 
 ## 3. Screen 2 — Review Queue
 

@@ -3,11 +3,14 @@ src/app/main.py
 
 Screen 1 — New Application
 Intake form + document upload → runs LangGraph agent → navigates to detail view.
+
+All scoring-relevant fields (income, DTI, bureau score, tenure, etc.) are extracted
+by the agent from the uploaded documents. Only identity fields (name, address) and
+the requested loan amount are collected here — everything else comes from the docs.
 """
 from __future__ import annotations
 
 import time
-import uuid
 
 import streamlit as st
 
@@ -29,52 +32,52 @@ st.caption("Submit a new loan application for automated policy assessment.")
 # Form
 # ---------------------------------------------------------------------------
 with st.form("intake_form"):
-    col_left, col_right = st.columns([1, 1])
-
-    with col_left:
-        st.subheader("Applicant Details")
+    st.subheader("Applicant Details")
+    col_name, col_address = st.columns([1, 2])
+    with col_name:
         applicant_name = st.text_input("Full name *", placeholder="Jane Smith")
+    with col_address:
         applicant_address = st.text_input("Address *", placeholder="12 Main St, Springfield")
-        requested_amount = st.number_input("Requested loan amount ($)", min_value=0, value=25000, step=1000)
-        st.caption("The fields below are collected for form completeness — the agent will extract and verify them from your uploaded documents.")
-        stated_income = st.number_input("Stated monthly income ($)", min_value=0, value=5000, step=100)
-        stated_debt = st.number_input("Stated monthly debt obligations ($)", min_value=0, value=800, step=50)
-        employer = st.text_input("Employer name", placeholder="Acme Corp")
-        notes = st.text_area(
-            "Application notes (optional)",
-            placeholder="Any additional context for the underwriter.",
-            height=80,
-        )
 
-    with col_right:
-        st.subheader("Required Documents")
-        st.caption("All three documents must be uploaded before submission.")
+    st.divider()
+    st.subheader("Required Documents")
+    st.caption(
+        "All three documents are required. The agent will extract income, bureau score, "
+        "employment tenure, and all other scoring fields directly from these files."
+    )
 
+    col_id, col_pay, col_bank = st.columns(3)
+    with col_id:
         id_file = st.file_uploader(
             "🪪 Government ID *",
             type=["pdf", "txt", "png", "jpg"],
             key="id_doc",
         )
+    with col_pay:
         payslip_file = st.file_uploader(
             "💼 Income proof (payslip / employer letter) *",
             type=["pdf", "txt", "png", "jpg"],
             key="payslip_doc",
         )
+    with col_bank:
         bank_file = st.file_uploader(
             "🏦 Bank statement (most recent period) *",
             type=["pdf", "txt", "png", "jpg"],
             key="bank_doc",
         )
 
-        docs_complete = all([id_file, payslip_file, bank_file])
-        if docs_complete:
-            st.success("✅ All three documents attached.")
-        else:
-            missing = []
-            if not id_file: missing.append("Government ID")
-            if not payslip_file: missing.append("Income proof")
-            if not bank_file: missing.append("Bank statement")
-            st.warning(f"Missing: {', '.join(missing)}")
+    docs_complete = all([id_file, payslip_file, bank_file])
+    if docs_complete:
+        st.success("✅ All three documents attached.")
+    else:
+        missing = []
+        if not id_file:
+            missing.append("Government ID")
+        if not payslip_file:
+            missing.append("Income proof")
+        if not bank_file:
+            missing.append("Bank statement")
+        st.warning(f"Missing: {', '.join(missing)}")
 
     st.divider()
     submit_disabled = not (applicant_name and applicant_address and docs_complete)
@@ -92,10 +95,26 @@ if submitted:
         st.error("Applicant name and address are required.")
         st.stop()
 
-    # Read document text (for demo, treat uploaded files as text content)
+    # Read document text (supports PDF and plaintext)
     def _read_file(f) -> str:
         try:
             raw = f.read()
+            
+            # Check if this is a PDF
+            if f.name.lower().endswith('.pdf'):
+                try:
+                    from pypdf import PdfReader
+                    from io import BytesIO
+                    
+                    pdf_reader = PdfReader(BytesIO(raw))
+                    text_parts = []
+                    for page in pdf_reader.pages:
+                        text_parts.append(page.extract_text())
+                    return "\n\n".join(text_parts)
+                except Exception as pdf_err:
+                    return f"[PDF parsing failed: {pdf_err}]"
+            
+            # Try UTF-8 decode for text files
             try:
                 return raw.decode("utf-8")
             except Exception:

@@ -15,7 +15,6 @@ from typing import Any, Type
 
 from openai import APIError, APITimeoutError, OpenAI
 from pydantic import BaseModel
-from tenacity import retry, stop_after_attempt, wait_exponential
 
 from src.config import get_llm_model, get_node_timeout, get_openrouter_api_key, get_openrouter_base_url
 

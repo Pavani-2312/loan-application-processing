@@ -288,7 +288,7 @@ if extracted_effective:
                 with st.spinner("Re-scoring with confirmed values…"):
                     try:
                         from src.agent.graph import resume_from_scoring
-                        resume_from_scoring(application_id)
+                        resume_from_scoring(application_id, underwriter_id)
                         st.success("Re-scoring complete. Refreshing…")
                         st.rerun()
                     except Exception as e:

@@ -161,13 +161,17 @@ def run_agent(
     return final_state
 
 
-def resume_from_scoring(application_id: str) -> AgentState:
+def resume_from_scoring(application_id: str, underwriter_id: str) -> AgentState:
     """
     Resume the pipeline from ScoringNode after a human has confirmed/corrected
     a low-confidence field (§1.2b of docs/03_Functional_Specification.md).
 
     Does NOT re-run IntakeNode or ValidationNode.
     Reads the current effective extracted_fields from DB (including the correction).
+    
+    Args:
+        application_id: The application to re-score
+        underwriter_id: Identity of the underwriter who made the correction
     """
     from src.agent.nodes import (
         _get_session_factory,
@@ -211,9 +215,9 @@ def resume_from_scoring(application_id: str) -> AgentState:
         # Log the re-score event
         uow.audit_logs.append(application_id, "RESCORED_AFTER_VERIFICATION", {
             "revision_number": next_rev,
-            "triggering_underwriter_id": "manual_correction",  # UI passes this in real use
+            "triggering_underwriter_id": underwriter_id,
         })
-        uow.applications.update_status(application_id, "PROCESSING_ERROR", app.status_version)
+        # Don't change status here - let audit_node set it correctly after re-scoring completes
         uow.commit()
 
     # Re-run from ScoringNode forward
