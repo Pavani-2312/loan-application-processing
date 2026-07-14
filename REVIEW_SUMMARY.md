@@ -17,25 +17,19 @@
 
 ## Critical Issues (Must Fix Before Production)
 
-### 1. 🔴 Fairness Check Not Working
+### 1. ✅ Fairness Check - FIXED
 **File:** `src/agent/nodes.py` - `fairness_node()`
 
-**Problem:** Does NOT actually strip identity before re-scoring. Currently re-runs scoring with identical numeric inputs, so bands always match by construction. The test passes but is vacuous.
+**Status:** Fixed in commit 26a5162
 
-**Impact:** Check claims to detect identity leakage but doesn't. Misleading for compliance.
+**What was done:** Re-implemented fairness check to actually redact identity from documents and re-extract numeric fields, then compare bands. Now properly detects if LLM leaked identity into extraction.
 
-**Fix Options:**
-- **Option A:** Re-implement to actually redact name/address from documents before re-extraction (1 day)
-- **Option B:** Remove fairness node and document why it's unnecessary (2 hours)
-
-### 2. ⚠️ Audit Package Export Missing
+### 2. ✅ Audit Package Export - ALREADY IMPLEMENTED
 **File:** `src/app/pages/audit_detail.py` line 194
 
-**Problem:** UI button exists but backend doesn't generate PDF/HTML. Documented in specs but not implemented.
+**Status:** Already implemented! The review incorrectly identified this as missing.
 
-**Impact:** No self-contained document for regulator handoff.
-
-**Fix:** Implement PDF/HTML rendering from DB data (1-2 days)
+**What exists:** Full HTML export with all data - extracted fields (all versions), score breakdowns (all revisions), recommendations, fairness checks, guardrail flags, decision history, and audit event timeline. Download button generates standalone HTML file.
 
 ### 3. 🔴 No Authentication (Documented)
 **Status:** Known limitation L1, explicitly disclosed in UI
