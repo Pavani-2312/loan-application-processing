@@ -527,26 +527,127 @@ def scoring_node_fairness(
 def fairness_node(state: AgentState) -> dict[str, Any]:
     """
     Identity-blind extraction consistency check.
-    Strips name + address from effective fields, re-runs scoring.
+    Re-extracts scoring fields from documents with identity redacted, then re-scores.
     Compares bands. PASS if identical; FAIL if different.
+    
+    This detects whether the LLM extraction step leaked applicant identity 
+    (name/address) into numeric scoring fields like income or tenure.
     """
     application_id = state.get("application_id")
     original_band = state.get("recommendation_band")
     rev = state.get("scoring_revision_number", 1)
+    applicant_name = state.get("applicant_name", "")
+    applicant_address = state.get("applicant_address", "")
+    raw_documents = state.get("raw_documents", {})
 
-    with UnitOfWork(_get_session_factory()) as uow:
-        effective_fields = uow.extracted_fields.get_effective_fields(application_id)
+    # Redact identity from document text
+    redacted_docs = {}
+    for doc_type, content in raw_documents.items():
+        if not content or content.startswith("[Binary file:"):
+            redacted_docs[doc_type] = content
+            continue
+        
+        # Replace name and address with neutral placeholders
+        redacted = content
+        if applicant_name:
+            redacted = redacted.replace(applicant_name, "[APPLICANT NAME]")
+        if applicant_address:
+            redacted = redacted.replace(applicant_address, "[APPLICANT ADDRESS]")
+        redacted_docs[doc_type] = redacted
 
-    # The deterministic scorer doesn't use name/address — bands will match by construction
-    # unless the LLM leaked identity into a numeric field during extraction.
-    blind_result = scoring_node_fairness(application_id, effective_fields, rev)
+    # Re-extract ONLY the scoring-relevant numeric fields from redacted documents
+    # We're testing: does removing identity change the extracted numbers?
+    redacted_extraction_prompt = f"""
+Extract ONLY these numeric fields from the redacted documents below.
+Identity information has been removed - focus purely on numeric values.
 
-    blind_band = blind_result["band"] if blind_result else original_band
+Required fields (extract as numeric values only):
+- stated_monthly_income (from payslip)
+- total_monthly_obligations (from bank statement)
+- bureau_score (from documents)
+- employment_tenure_months (from payslip)
+- income_variability_pct (from bank statement)
+
+Documents:
+ID: {redacted_docs.get('id', 'N/A')}
+Payslip: {redacted_docs.get('payslip', 'N/A')}
+Bank Statement: {redacted_docs.get('bank_statement', 'N/A')}
+
+Return ONLY the numeric values in the specified JSON format.
+"""
+
+    # Attempt blind extraction
+    try:
+        blind_extraction = call_llm_structured(
+            INTAKE_SYSTEM_PROMPT,
+            redacted_extraction_prompt,
+            DocumentExtractionResult,
+        )
+        
+        # Convert to numeric inputs for scoring
+        def _extract_float(field_name: str) -> float | None:
+            field_obj = getattr(blind_extraction, field_name, None)
+            if field_obj and hasattr(field_obj, 'value') and field_obj.value:
+                try:
+                    return float(field_obj.value)
+                except (ValueError, TypeError):
+                    return None
+            return None
+        
+        monthly_income = _extract_float("stated_monthly_income")
+        total_obligations = _extract_float("total_monthly_obligations")
+        bureau_score = _extract_float("bureau_score")
+        tenure_months = _extract_float("employment_tenure_months")
+        variability_pct = _extract_float("income_variability_pct")
+        
+        # Score with blind-extracted values
+        if all(v is not None for v in [monthly_income, total_obligations, bureau_score, 
+                                        tenure_months, variability_pct]) and monthly_income > 0:
+            from src.policy_engine import ScoringInputs, score_application
+            
+            dti = total_obligations / monthly_income
+            blind_inputs = ScoringInputs(
+                dti=dti,
+                bureau_score=bureau_score,
+                employment_tenure_months=tenure_months,
+                income_variability_pct=variability_pct,
+            )
+            
+            policy_config = get_policy_config()
+            blind_result = score_application(blind_inputs, policy_config)
+            blind_band = blind_result.recommendation_band
+        else:
+            # Extraction failed on redacted docs - might itself indicate identity dependence
+            blind_band = "EXTRACTION_FAILED"
+    
+    except (LLMCallError, Exception) as e:
+        # If blind extraction/scoring fails, that's notable but not a FAIL
+        # (Could be API issue, not necessarily identity leakage)
+        blind_band = "ERROR"
+
+    # Compare bands
     passed = original_band == blind_band
-    disparity = None if passed else (
-        f"Band changed from {original_band} to {blind_band} after removing identity fields. "
-        "Indicates possible identity leakage in LLM extraction step."
-    )
+    
+    if not passed:
+        if blind_band == "EXTRACTION_FAILED":
+            disparity = (
+                f"Original band: {original_band}. Identity-blind extraction failed to extract "
+                f"numeric fields from redacted documents. This may indicate the LLM relied on "
+                f"identity context to interpret ambiguous numeric values."
+            )
+        elif blind_band == "ERROR":
+            disparity = (
+                f"Original band: {original_band}. Identity-blind re-extraction encountered an error. "
+                f"Cannot determine if identity leaked into scoring."
+            )
+        else:
+            disparity = (
+                f"Band changed from {original_band} to {blind_band} after identity redaction. "
+                f"This indicates applicant name or address influenced the LLM's numeric field extraction, "
+                f"which then affected the deterministic scoring outcome."
+            )
+    else:
+        disparity = None
 
     with UnitOfWork(_get_session_factory()) as uow:
         uow.fairness_checks.add(
