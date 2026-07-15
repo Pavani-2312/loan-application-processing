@@ -53,6 +53,45 @@ def _get_session_factory():
 
 
 # ---------------------------------------------------------------------------
+# ChromaDB clause cache — single client, loaded once per process.
+# Avoids re-initialising PersistentClient (which loads onnxruntime) on
+# every recommendation_node call, which caused segfaults under Streamlit.
+# ---------------------------------------------------------------------------
+_chroma_client = None
+_clause_cache: dict[str, str] = {}   # clause_id -> clause text
+_clause_cache_loaded = False
+
+
+def _get_clause_texts(clause_ids: list[str]) -> dict[str, str]:
+    """
+    Return {clause_id: text} for each requested ID.
+    Loads all clauses from Chroma once and caches them in-process.
+    Falls back to an empty dict if Chroma is unavailable.
+    """
+    global _chroma_client, _clause_cache, _clause_cache_loaded
+
+    if not clause_ids:
+        return {}
+
+    # Populate cache on first call
+    if not _clause_cache_loaded:
+        try:
+            import chromadb
+            _chroma_client = chromadb.PersistentClient(path=str(get_chroma_dir()))
+            collection = _chroma_client.get_or_create_collection("credit_policy_clauses")
+            # Fetch all documents in one shot (24 clauses — trivially small)
+            result = collection.get(include=["documents"])
+            for cid, doc in zip(result["ids"], result["documents"]):
+                _clause_cache[cid] = doc
+        except Exception:
+            pass  # Graceful degradation — explanation still works without clause text
+        finally:
+            _clause_cache_loaded = True  # Don't retry on every call if Chroma is broken
+
+    return {cid: _clause_cache[cid] for cid in clause_ids if cid in _clause_cache}
+
+
+# ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
 
@@ -710,30 +749,13 @@ def recommendation_node(state: AgentState) -> dict[str, Any]:
     # Retrieve full clause text from Chroma for each cited clause_id
     clause_texts = {}
     if factor_breakdown:
-        try:
-            import chromadb
-            from src.config import get_chroma_dir
-            
-            client = chromadb.PersistentClient(path=str(get_chroma_dir()))
-            collection = client.get_or_create_collection("credit_policy_clauses")
-            
-            # Collect all unique clause IDs
-            clause_ids = []
-            for fb in factor_breakdown:
-                clause_id = fb.get("clause_id", "")
-                # Handle combined clauses (e.g., "5.1(a),5.2(a)")
-                if clause_id:
-                    clause_ids.extend(cid.strip() for cid in clause_id.split(","))
-            
-            if clause_ids:
-                # Fetch all clauses in one call
-                result = collection.get(ids=clause_ids, include=["documents"])
-                for i, clause_id in enumerate(result["ids"]):
-                    clause_texts[clause_id] = result["documents"][i]
-        except Exception as e:
-            # If Chroma retrieval fails, continue without clause text
-            # The explanation will still have clause IDs
-            pass
+        # Collect all unique clause IDs (handle combined e.g. "5.1(a),5.2(a)")
+        clause_ids: list[str] = []
+        for fb in factor_breakdown:
+            clause_id = fb.get("clause_id", "")
+            if clause_id:
+                clause_ids.extend(cid.strip() for cid in clause_id.split(","))
+        clause_texts = _get_clause_texts(clause_ids)
 
     # Build user prompt with clause texts included
     breakdown_with_text = []
