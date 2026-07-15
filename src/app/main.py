@@ -29,13 +29,15 @@ st.title("📝 New Application")
 st.caption("Submit a new loan application for automated policy assessment.")
 
 # ---------------------------------------------------------------------------
-# Form
+# Intake form — all widgets are intentionally outside st.form().
+#
+# st.form() batches widget state and only commits it on submit, which means
+# every widget inside a form reads as its default value (empty / None) on
+# every render pass *before* the submit button is clicked.  That makes it
+# impossible to reactively enable/disable the submit button based on widget
+# values, because those values are never available until after you've already
+# clicked submit.  Using plain widgets + st.button() avoids this entirely.
 # ---------------------------------------------------------------------------
-# Applicant details live OUTSIDE the form so they update on every keystroke.
-# Streamlit form widgets only commit their values on submit, so putting
-# text_input inside a form causes `applicant_name` / `applicant_address` to
-# be empty strings on every render before the button is clicked — which would
-# permanently keep submit_disabled=True regardless of what the user typed.
 st.subheader("Applicant Details")
 col_name, col_address = st.columns([1, 2])
 with col_name:
@@ -44,54 +46,53 @@ with col_address:
     applicant_address = st.text_input("Address *", placeholder="12 Main St, Springfield")
 
 st.divider()
+st.subheader("Required Documents")
+st.caption(
+    "All three documents are required. The agent will extract income, bureau score, "
+    "employment tenure, and all other scoring fields directly from these files."
+)
 
-with st.form("intake_form"):
-    st.subheader("Required Documents")
-    st.caption(
-        "All three documents are required. The agent will extract income, bureau score, "
-        "employment tenure, and all other scoring fields directly from these files."
+col_id, col_pay, col_bank = st.columns(3)
+with col_id:
+    id_file = st.file_uploader(
+        "🪪 Government ID *",
+        type=["pdf", "txt"],
+        key="id_doc",
+    )
+with col_pay:
+    payslip_file = st.file_uploader(
+        "💼 Income proof (payslip / employer letter) *",
+        type=["pdf", "txt"],
+        key="payslip_doc",
+    )
+with col_bank:
+    bank_file = st.file_uploader(
+        "🏦 Bank statement (most recent period) *",
+        type=["pdf", "txt"],
+        key="bank_doc",
     )
 
-    col_id, col_pay, col_bank = st.columns(3)
-    with col_id:
-        id_file = st.file_uploader(
-            "🪪 Government ID *",
-            type=["pdf", "txt", "png", "jpg"],
-            key="id_doc",
-        )
-    with col_pay:
-        payslip_file = st.file_uploader(
-            "💼 Income proof (payslip / employer letter) *",
-            type=["pdf", "txt", "png", "jpg"],
-            key="payslip_doc",
-        )
-    with col_bank:
-        bank_file = st.file_uploader(
-            "🏦 Bank statement (most recent period) *",
-            type=["pdf", "txt", "png", "jpg"],
-            key="bank_doc",
-        )
+docs_complete = all([id_file, payslip_file, bank_file])
+if docs_complete:
+    st.success("✅ All three documents attached.")
+else:
+    missing = []
+    if not id_file:
+        missing.append("Government ID")
+    if not payslip_file:
+        missing.append("Income proof")
+    if not bank_file:
+        missing.append("Bank statement")
+    st.warning(f"Missing: {', '.join(missing)}")
 
-    docs_complete = all([id_file, payslip_file, bank_file])
-    if docs_complete:
-        st.success("✅ All three documents attached.")
-    else:
-        missing = []
-        if not id_file:
-            missing.append("Government ID")
-        if not payslip_file:
-            missing.append("Income proof")
-        if not bank_file:
-            missing.append("Bank statement")
-        st.warning(f"Missing: {', '.join(missing)}")
-
-    st.divider()
-    submit_disabled = not (applicant_name and applicant_address and docs_complete)
-    submitted = st.form_submit_button(
-        "🚀 Submit for Processing",
-        disabled=submit_disabled,
-        type="primary",
-    )
+st.divider()
+submit_disabled = not (applicant_name and applicant_address and docs_complete)
+submitted = st.button(
+    "🚀 Submit for Processing",
+    disabled=submit_disabled,
+    type="primary",
+    use_container_width=False,
+)
 
 # ---------------------------------------------------------------------------
 # Processing
@@ -101,22 +102,11 @@ if submitted:
         st.error("Applicant name and address are required.")
         st.stop()
 
-    # Read document text (supports PDF and plaintext; image files are not supported)
-    IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".bmp", ".webp"}
-
+    # Read document text (supports PDF and plain text)
     def _read_file(f) -> str:
         try:
             raw = f.read()
             ext = "." + f.name.rsplit(".", 1)[-1].lower() if "." in f.name else ""
-
-            # Image files: text extraction is not supported — return a clear marker
-            # so the intake LLM knows it received an image it cannot read.
-            if ext in IMAGE_EXTENSIONS:
-                return (
-                    f"[Image file uploaded: {f.name}. "
-                    "Text extraction from images is not supported. "
-                    "Please re-upload as a PDF or plain-text file so the agent can read the content.]"
-                )
 
             # PDF: extract text with pypdf
             if ext == ".pdf":
@@ -130,7 +120,7 @@ if submitted:
                 except Exception as pdf_err:
                     return f"[PDF parsing failed for {f.name}: {pdf_err}]"
 
-            # Plain text / other text-based formats
+            # Plain text
             try:
                 return raw.decode("utf-8")
             except Exception:
@@ -138,32 +128,11 @@ if submitted:
         except Exception as e:
             return f"[File read error for {f.name}: {e}]"
 
-    docs = {
-        "id": (id_file, _read_file(id_file)),
-        "payslip": (payslip_file, _read_file(payslip_file)),
-        "bank_statement": (bank_file, _read_file(bank_file)),
+    raw_documents = {
+        "id": _read_file(id_file),
+        "payslip": _read_file(payslip_file),
+        "bank_statement": _read_file(bank_file),
     }
-
-    # Warn the user if any uploaded file is an image (agent cannot extract text from it)
-    image_warnings = [
-        f"**{label}** ({f.name})"
-        for label, (f, content) in [
-            ("Government ID", docs["id"]),
-            ("Income proof", docs["payslip"]),
-            ("Bank statement", docs["bank_statement"]),
-        ]
-        if "Image file uploaded" in content
-    ]
-    if image_warnings:
-        st.warning(
-            "⚠️ **Image files cannot be processed.** The agent extracts data by reading "
-            "document text — it cannot read the pixels of a photo or screenshot.\n\n"
-            "Please re-upload the following as **PDF or .txt** files:\n\n"
-            + "\n".join(f"- {w}" for w in image_warnings)
-        )
-        st.stop()
-
-    raw_documents = {key: content for key, (_, content) in docs.items()}
 
     # Create the application record first
     idempotency_key = new_idempotency_key()
