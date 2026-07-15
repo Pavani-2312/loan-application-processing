@@ -457,10 +457,7 @@ if _can_decide:
                 unsafe_allow_html=True,
             )
 
-        btn_label = "Record Referral →" if decision_choice == "REFER" else "Record Decision →"
-        submit_decision = st.form_submit_button(
-            btn_label, type="primary", disabled=(decision_choice == "— Select —"),
-        )
+        submit_decision = st.form_submit_button("Record Decision →", type="primary")
 
     if submit_decision:
         if not rationale or not rationale.strip():
