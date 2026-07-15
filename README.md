@@ -46,7 +46,7 @@ Key design decisions:
 ### Prerequisites
 
 - Python 3.10+ (tested on 3.14)
-- An [OpenRouter](https://openrouter.ai) API key (Claude 3.5 Sonnet recommended)
+- A [GitHub Personal Access Token](https://github.com/settings/tokens) (for GitHub Models inference)
 
 ### Install
 
@@ -61,8 +61,8 @@ python3 -m venv .venv
 # 3. Configure environment
 cp .env.example .env
 # Edit .env and set:
-#   OPENROUTER_API_KEY=sk-or-...
-#   LLM_MODEL=anthropic/claude-3.5-sonnet   (or any Claude model on OpenRouter)
+#   GITHUB_TOKEN=github_pat_...   (your GitHub Personal Access Token)
+#   LLM_MODEL=openai/gpt-4o      (or any model from https://github.com/marketplace/models)
 ```
 
 ### Run

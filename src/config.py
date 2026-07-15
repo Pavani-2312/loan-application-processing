@@ -28,16 +28,19 @@ def get_policy_config() -> dict[str, Any]:
 
 
 def get_openrouter_api_key() -> str:
-    key = os.getenv("OPENROUTER_API_KEY", "")
+    # Prefer GITHUB_TOKEN (GitHub Models); fall back to OPENROUTER_API_KEY (OpenRouter).
+    key = os.getenv("GITHUB_TOKEN", "") or os.getenv("OPENROUTER_API_KEY", "")
     if not key:
         raise EnvironmentError(
-            "OPENROUTER_API_KEY not set. Copy .env.example to .env and add your key."
+            "No LLM API key found. Set GITHUB_TOKEN (GitHub Models) or "
+            "OPENROUTER_API_KEY (OpenRouter) in your .env file."
         )
     return key
 
 
 def get_openrouter_base_url() -> str:
-    return os.getenv("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1")
+    # GitHub Models endpoint when using a PAT; OpenRouter URL otherwise.
+    return os.getenv("OPENROUTER_BASE_URL", "https://models.inference.ai.azure.com")
 
 
 def get_llm_model() -> str:
