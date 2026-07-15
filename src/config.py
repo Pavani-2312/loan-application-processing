@@ -44,7 +44,7 @@ def get_openrouter_base_url() -> str:
 
 
 def get_llm_model() -> str:
-    return os.getenv("LLM_MODEL", "anthropic/claude-3.5-sonnet")
+    return os.getenv("LLM_MODEL", "gpt-4o")
 
 
 def get_data_dir() -> Path:
