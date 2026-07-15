@@ -31,15 +31,21 @@ st.caption("Submit a new loan application for automated policy assessment.")
 # ---------------------------------------------------------------------------
 # Form
 # ---------------------------------------------------------------------------
-with st.form("intake_form"):
-    st.subheader("Applicant Details")
-    col_name, col_address = st.columns([1, 2])
-    with col_name:
-        applicant_name = st.text_input("Full name *", placeholder="Jane Smith")
-    with col_address:
-        applicant_address = st.text_input("Address *", placeholder="12 Main St, Springfield")
+# Applicant details live OUTSIDE the form so they update on every keystroke.
+# Streamlit form widgets only commit their values on submit, so putting
+# text_input inside a form causes `applicant_name` / `applicant_address` to
+# be empty strings on every render before the button is clicked — which would
+# permanently keep submit_disabled=True regardless of what the user typed.
+st.subheader("Applicant Details")
+col_name, col_address = st.columns([1, 2])
+with col_name:
+    applicant_name = st.text_input("Full name *", placeholder="Jane Smith")
+with col_address:
+    applicant_address = st.text_input("Address *", placeholder="12 Main St, Springfield")
 
-    st.divider()
+st.divider()
+
+with st.form("intake_form"):
     st.subheader("Required Documents")
     st.caption(
         "All three documents are required. The agent will extract income, bureau score, "
@@ -95,38 +101,69 @@ if submitted:
         st.error("Applicant name and address are required.")
         st.stop()
 
-    # Read document text (supports PDF and plaintext)
+    # Read document text (supports PDF and plaintext; image files are not supported)
+    IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".bmp", ".webp"}
+
     def _read_file(f) -> str:
         try:
             raw = f.read()
-            
-            # Check if this is a PDF
-            if f.name.lower().endswith('.pdf'):
+            ext = "." + f.name.rsplit(".", 1)[-1].lower() if "." in f.name else ""
+
+            # Image files: text extraction is not supported — return a clear marker
+            # so the intake LLM knows it received an image it cannot read.
+            if ext in IMAGE_EXTENSIONS:
+                return (
+                    f"[Image file uploaded: {f.name}. "
+                    "Text extraction from images is not supported. "
+                    "Please re-upload as a PDF or plain-text file so the agent can read the content.]"
+                )
+
+            # PDF: extract text with pypdf
+            if ext == ".pdf":
                 try:
-                    from pypdf import PdfReader
                     from io import BytesIO
-                    
+                    from pypdf import PdfReader
                     pdf_reader = PdfReader(BytesIO(raw))
-                    text_parts = []
-                    for page in pdf_reader.pages:
-                        text_parts.append(page.extract_text())
-                    return "\n\n".join(text_parts)
+                    text_parts = [page.extract_text() for page in pdf_reader.pages]
+                    extracted = "\n\n".join(t for t in text_parts if t)
+                    return extracted if extracted.strip() else f"[PDF text extraction returned no content for {f.name}]"
                 except Exception as pdf_err:
-                    return f"[PDF parsing failed: {pdf_err}]"
-            
-            # Try UTF-8 decode for text files
+                    return f"[PDF parsing failed for {f.name}: {pdf_err}]"
+
+            # Plain text / other text-based formats
             try:
                 return raw.decode("utf-8")
             except Exception:
-                return f"[Binary file: {f.name}]"
-        except Exception:
-            return ""
+                return f"[Could not decode {f.name} as text. Please upload a PDF or .txt file.]"
+        except Exception as e:
+            return f"[File read error for {f.name}: {e}]"
 
-    raw_documents = {
-        "id": _read_file(id_file),
-        "payslip": _read_file(payslip_file),
-        "bank_statement": _read_file(bank_file),
+    docs = {
+        "id": (id_file, _read_file(id_file)),
+        "payslip": (payslip_file, _read_file(payslip_file)),
+        "bank_statement": (bank_file, _read_file(bank_file)),
     }
+
+    # Warn the user if any uploaded file is an image (agent cannot extract text from it)
+    image_warnings = [
+        f"**{label}** ({f.name})"
+        for label, (f, content) in [
+            ("Government ID", docs["id"]),
+            ("Income proof", docs["payslip"]),
+            ("Bank statement", docs["bank_statement"]),
+        ]
+        if "Image file uploaded" in content
+    ]
+    if image_warnings:
+        st.warning(
+            "⚠️ **Image files cannot be processed.** The agent extracts data by reading "
+            "document text — it cannot read the pixels of a photo or screenshot.\n\n"
+            "Please re-upload the following as **PDF or .txt** files:\n\n"
+            + "\n".join(f"- {w}" for w in image_warnings)
+        )
+        st.stop()
+
+    raw_documents = {key: content for key, (_, content) in docs.items()}
 
     # Create the application record first
     idempotency_key = new_idempotency_key()
