@@ -178,6 +178,7 @@ def resume_from_scoring(application_id: str, underwriter_id: str) -> AgentState:
         audit_node,
         fairness_node,
         guardrail_node,
+        human_gate_node,
         recommendation_node,
         scoring_node,
     )
@@ -220,9 +221,18 @@ def resume_from_scoring(application_id: str, underwriter_id: str) -> AgentState:
         # Don't change status here - let audit_node set it correctly after re-scoring completes
         uow.commit()
 
-    # Re-run from ScoringNode forward
+    # Re-run from ScoringNode forward, respecting the same error routing the
+    # compiled graph would apply via _route_after_scoring.
+    _ERROR_STATUSES = {"PROCESSING_ERROR", "POLICY_CONFIG_ERROR"}
+
     state = dict(current_state)
-    state = {**state, **scoring_node(current_state, revision_number=next_rev)}
+
+    state = {**state, **scoring_node(state, revision_number=next_rev)}
+    if state.get("final_status") in _ERROR_STATUSES:
+        # Persist error status and stop — same as _route_after_scoring → audit_node
+        audit_node(state)
+        return state
+
     state = {**state, **fairness_node(state)}
     state = {**state, **recommendation_node(state)}
     state = {**state, **guardrail_node(state)}

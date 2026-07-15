@@ -59,10 +59,12 @@ document_rules:
 extraction_rules:
   # Fields that block auto-scoring if extracted with low confidence.
   # A low-confidence value on any of these triggers NEEDS_MANUAL_VERIFICATION.
+  # These names must match the field_name values persisted by intake_node exactly.
   scoring_relevant_fields:
-    - monthly_income
-    - stated_debt
+    - stated_monthly_income
+    - total_monthly_obligations
     - bureau_score
     - employment_tenure_months
-    - deposit_amounts
+    - average_monthly_deposits
+    - income_variability_pct
   low_confidence_action: NEEDS_MANUAL_VERIFICATION

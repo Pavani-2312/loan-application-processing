@@ -91,11 +91,16 @@ def _base_state(app_id: str, name="Test Applicant", address="1 Main St") -> Agen
 def _stub_extraction(
     monthly_income="5000", bureau_score="720", tenure_months="36",
     variability_pct="5", total_obligations="1000",
+    average_monthly_deposits=None,   # defaults to monthly_income so plausibility check passes
     id_present=True, payslip_present=True, bank_present=True,
     confidence="high", low_confidence_field=None,
 ):
     """Return a mock DocumentExtractionResult."""
     from src.agent.schemas import DocumentExtractionResult, ExtractedNumericField
+
+    # Default deposits to income so the deterministic ±15% check passes unless overridden
+    if average_monthly_deposits is None:
+        average_monthly_deposits = monthly_income
 
     def _field(value, src, conf=None):
         eff_conf = conf or confidence
@@ -119,7 +124,7 @@ def _stub_extraction(
                                          "low" if low_confidence_field == "employment_tenure_months" else confidence),
         applicant_name_on_statement=_field("Test Applicant", "bank_statement"),
         statement_period_end_date=_field("2026-06-30", "bank_statement"),
-        average_monthly_deposits=_field("5000", "bank_statement"),
+        average_monthly_deposits=_field(average_monthly_deposits, "bank_statement"),
         income_variability_pct=_field(variability_pct, "bank_statement"),
         total_monthly_obligations=_field(total_obligations, "bank_statement"),
         bureau_score=_field(bureau_score, "bank_statement",
@@ -133,10 +138,9 @@ def _stub_extraction(
 def _stub_validation(passed=True):
     from src.agent.schemas import ConsistencyCheckItem, ConsistencyCheckResult
     checks = [
-        ConsistencyCheckItem(check_name="name_match", passed=passed, evidence="Names match" if passed else "Name mismatch"),
-        ConsistencyCheckItem(check_name="id_validity", passed=True, evidence="ID valid until 2030"),
-        ConsistencyCheckItem(check_name="income_plausibility", passed=True, evidence="Income within 15%"),
-        ConsistencyCheckItem(check_name="statement_recency", passed=True, evidence="Statement is recent"),
+        ConsistencyCheckItem(check_name="name_match",        passed=passed, evidence="Names match" if passed else "Name mismatch"),
+        ConsistencyCheckItem(check_name="id_validity",       passed=True,   evidence="ID valid until 2030"),
+        ConsistencyCheckItem(check_name="statement_recency", passed=True,   evidence="Statement is recent"),
     ]
     return ConsistencyCheckResult(checks=checks, overall_consistent=passed)
 

@@ -71,7 +71,7 @@ class DocumentExtractionResult(BaseModel):
 # ---------------------------------------------------------------------------
 
 class ConsistencyCheckItem(BaseModel):
-    check_name: Literal["name_match", "id_validity", "income_plausibility", "statement_recency"]
+    check_name: Literal["name_match", "id_validity", "statement_recency"]
     passed: bool
     evidence: str = Field(description="Brief evidence for the pass/fail judgment")
 

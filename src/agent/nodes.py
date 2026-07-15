@@ -99,14 +99,32 @@ def _now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
-SCORING_RELEVANT_FIELDS = [
-    "stated_monthly_income",
-    "total_monthly_obligations",
-    "bureau_score",
-    "employment_tenure_months",
-    "average_monthly_deposits",
-    "income_variability_pct",
-]
+def _get_scoring_relevant_fields() -> list[str]:
+    """
+    Return the list of field names that trigger NEEDS_MANUAL_VERIFICATION
+    when extracted with low confidence.
+
+    Reads from policy_config.yaml extraction_rules.scoring_relevant_fields.
+    Falls back to a hardcoded default list if the key is absent, so existing
+    deployments without the config key continue to work.
+    """
+    config = get_policy_config()
+    fields = (
+        config
+        .get("extraction_rules", {})
+        .get("scoring_relevant_fields", [])
+    )
+    if fields:
+        return list(fields)
+    # Fallback — matches the field names used throughout the rest of the code
+    return [
+        "stated_monthly_income",
+        "total_monthly_obligations",
+        "bureau_score",
+        "employment_tenure_months",
+        "average_monthly_deposits",
+        "income_variability_pct",
+    ]
 
 
 # ---------------------------------------------------------------------------
@@ -221,7 +239,7 @@ def intake_node(state: AgentState) -> dict[str, Any]:
                 "source_document": field_data.source_document,
             }
             # Track low-confidence scoring-relevant fields
-            if field_name in SCORING_RELEVANT_FIELDS and field_data.confidence == "low":
+            if field_name in _get_scoring_relevant_fields() and field_data.confidence == "low":
                 low_confidence_fields.append(field_name)
 
         # Persist audit event
@@ -268,15 +286,14 @@ def intake_node(state: AgentState) -> dict[str, Any]:
 VALIDATION_SYSTEM_PROMPT = """You are a document compliance analyst for a credit underwriting system.
 Your job is to verify cross-document consistency for a loan application.
 
-You will check four things:
+You will check three things:
 1. name_match: Do the names on the ID, payslip, and bank statement refer to the same person?
    (Fuzzy match — tolerate formatting differences, do NOT tolerate clearly different people.)
 2. id_validity: Is the ID expiry date in the future relative to the application date?
-3. income_plausibility: Is the stated monthly income within ±15% of the average monthly deposits?
-4. statement_recency: Is the bank statement period end date within 60 days of today?
+3. statement_recency: Is the bank statement period end date within 60 days of today?
 
 For each check: set passed=true or false, and provide a brief evidence string explaining your judgment.
-Set overall_consistent=true ONLY if ALL four checks passed.
+Set overall_consistent=true ONLY if ALL three checks passed.
 
 Respond with valid JSON only — no text before or after.
 """
@@ -321,6 +338,50 @@ def validation_node(state: AgentState) -> dict[str, Any]:
 
     checks = [c.model_dump() for c in result.checks]
     passed = result.overall_consistent
+
+    # ----------------------------------------------------------------
+    # Deterministic income plausibility check (Python, not LLM).
+    # Reads tolerance from policy_config.yaml document_rules.income_tolerance_pct.
+    # Runs only when both numeric values are available; skipped otherwise.
+    # ----------------------------------------------------------------
+    income_plausibility_passed = True
+    income_plausibility_evidence = "Skipped — one or both values unavailable."
+
+    policy_config = get_policy_config()
+    tolerance_pct = float(
+        policy_config.get("document_rules", {}).get("income_tolerance_pct", 15)
+    ) / 100.0  # convert 15 → 0.15
+
+    stated_income_raw  = extracted.get("stated_monthly_income",  {}).get("value")
+    avg_deposits_raw   = extracted.get("average_monthly_deposits", {}).get("value")
+
+    if stated_income_raw and avg_deposits_raw:
+        try:
+            stated  = float(stated_income_raw)
+            deposits= float(avg_deposits_raw)
+            if deposits > 0:
+                ratio = abs(stated - deposits) / deposits
+                income_plausibility_passed = ratio <= tolerance_pct
+                income_plausibility_evidence = (
+                    f"Stated income {stated:.2f} vs avg deposits {deposits:.2f} "
+                    f"— deviation {ratio*100:.1f}% "
+                    f"({'within' if income_plausibility_passed else 'exceeds'} "
+                    f"±{tolerance_pct*100:.0f}% policy threshold)."
+                )
+            else:
+                income_plausibility_evidence = "Average deposits is zero — cannot compute ratio."
+        except (ValueError, TypeError):
+            income_plausibility_evidence = "Could not parse income/deposit values as numbers."
+
+    checks.append({
+        "check_name": "income_plausibility",
+        "passed": income_plausibility_passed,
+        "evidence": income_plausibility_evidence,
+    })
+
+    # overall_consistent must account for the Python check too
+    if not income_plausibility_passed:
+        passed = False
 
     with UnitOfWork(_get_session_factory()) as uow:
         for check in result.checks:
