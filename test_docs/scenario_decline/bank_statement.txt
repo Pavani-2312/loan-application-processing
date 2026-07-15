@@ -1,0 +1,64 @@
+================================================================================
+              STATE BANK OF INDIA — ACCOUNT STATEMENT
+================================================================================
+Account Holder    : Ravi Kumar
+Account Number    : SBI-XXXXXX-3309
+Account Type      : Savings Account
+Branch            : Lajpat Nagar, New Delhi
+IFSC              : SBIN0004567
+
+Statement Period  : 01 January 2026 – 30 June 2026
+Statement Date    : 30 June 2026
+
+Credit Bureau Score (as on 30 June 2026) : 560
+Note: Score reflects 2 missed EMI payments (Nov 2025, Jan 2026) and
+      1 credit card settlement recorded in bureau history.
+================================================================================
+
+DATE          DESCRIPTION                        CREDIT (INR)    DEBIT (INR)
+------------------------------------------------------------------------
+01 Jan 2026   Opening Balance                                         —
+20 Jan 2026   SALARY CREDIT — Sunrise Distr.      25,000
+15 Jan 2026   Personal Loan EMI (Bajaj Finance)                    12,000
+22 Jan 2026   Personal Loan EMI (Kotak Bank)                        8,000
+28 Jan 2026   Credit Card — Minimum Due                             4,000
+14 Feb 2026   SALARY CREDIT — Sunrise Distr.      62,000
+15 Feb 2026   Personal Loan EMI (Bajaj Finance)                    12,000
+22 Feb 2026   Personal Loan EMI (Kotak Bank)                        8,000
+28 Feb 2026   Credit Card — Minimum Due                             4,000
+18 Mar 2026   SALARY CREDIT — Sunrise Distr.      35,000
+15 Mar 2026   Personal Loan EMI (Bajaj Finance)                    12,000
+22 Mar 2026   Personal Loan EMI (Kotak Bank)                        8,000
+31 Mar 2026   Credit Card — Minimum Due                             4,000
+10 Apr 2026   SALARY CREDIT — Sunrise Distr.      78,000
+15 Apr 2026   Personal Loan EMI (Bajaj Finance)                    12,000
+22 Apr 2026   Personal Loan EMI (Kotak Bank)                        8,000
+28 Apr 2026   Credit Card — Minimum Due                             4,000
+05 May 2026   SALARY CREDIT — Sunrise Distr.      42,000
+15 May 2026   Personal Loan EMI (Bajaj Finance)                    12,000
+22 May 2026   Personal Loan EMI (Kotak Bank)                        8,000
+28 May 2026   Credit Card — Minimum Due                             4,000
+20 Jun 2026   SALARY CREDIT — Sunrise Distr.      58,000
+15 Jun 2026   Personal Loan EMI (Bajaj Finance)                    12,000
+22 Jun 2026   Personal Loan EMI (Kotak Bank)                        8,000
+28 Jun 2026   Credit Card — Minimum Due                             4,000
+------------------------------------------------------------------------
+
+DEPOSIT SUMMARY (Jan–Jun 2026)
+------------------------------------------------------------------------
+Monthly Deposits  :  25,000 | 62,000 | 35,000 | 78,000 | 42,000 | 58,000
+Average Monthly Deposit        :  INR 50,000
+Income Variability (std/mean)  :  45%
+(Note: High variability reflects irregular payment dates and variable
+ commission-based income component)
+
+RECURRING MONTHLY OBLIGATIONS
+------------------------------------------------------------------------
+Personal Loan EMI (Bajaj Finance)  :  INR 12,000
+Personal Loan EMI (Kotak Bank)     :  INR  8,000
+Credit Card (minimum payment)      :  INR  4,000
+                                      ---------
+TOTAL MONTHLY OBLIGATIONS          :  INR 30,000
+
+Closing Balance (30 Jun 2026)      :  INR 11,000
+================================================================================

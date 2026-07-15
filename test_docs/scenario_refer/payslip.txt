@@ -1,0 +1,42 @@
+================================================================================
+                         SALARY SLIP — JUNE 2026
+================================================================================
+Employee Name     : Arjun Mehta
+Employee ID       : EMP-22187
+Designation       : Marketing Manager
+Department        : Sales & Marketing
+
+Employer          : Reliance Retail Ltd.
+Address           : Maker Chambers IV, Nariman Point, Mumbai - 400021
+PAN               : BCQAM5678F
+Employment Start  : January 2025
+Employment Tenure : 18 months
+
+Pay Period        : 01 June 2026 – 30 June 2026
+Pay Date          : 30 June 2026
+
+--------------------------------------------------------------------------------
+EARNINGS
+--------------------------------------------------------------------------------
+Basic Salary                    :  INR  2,50,000  (monthly: INR 20,833)
+House Rent Allowance (HRA)      :  INR  1,00,000  (monthly: INR  8,333)
+Special Allowance               :  INR  1,00,000  (monthly: INR  8,334)
+Conveyance                      :  INR    50,000  (monthly: INR  4,167)
+Medical Allowance               :  INR    50,000  (monthly: INR  4,167)
+                                  --------------------------------
+GROSS MONTHLY INCOME            :                 INR     50,000
+                                  ================================
+
+--------------------------------------------------------------------------------
+DEDUCTIONS
+--------------------------------------------------------------------------------
+Provident Fund (12%)            :  INR  2,500
+Professional Tax                :  INR    200
+TDS (Income Tax)                :  INR  3,500
+                                  ---------
+TOTAL DEDUCTIONS                :  INR  6,200
+                                  =========
+
+NET MONTHLY SALARY              :  INR 43,800
+================================================================================
+Authorised Signatory: HR Department, Reliance Retail Ltd.

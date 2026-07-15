@@ -1,0 +1,51 @@
+================================================================================
+              HDFC BANK — ACCOUNT STATEMENT
+================================================================================
+Account Holder    : Priya Sharma
+Account Number    : HDFC-XXXXXX-4891
+Account Type      : Savings Account
+Branch            : Koramangala, Bengaluru
+IFSC              : HDFC0001234
+
+Statement Period  : 01 January 2026 – 30 June 2026
+Statement Date    : 30 June 2026
+
+Credit Bureau Score (as on 30 June 2026) : 750
+================================================================================
+
+DATE          DESCRIPTION                        CREDIT (INR)    DEBIT (INR)
+------------------------------------------------------------------------
+01 Jan 2026   Opening Balance                                         —
+30 Jan 2026   SALARY CREDIT — Infosys               60,000
+10 Feb 2026   EMI — Home Loan (Axis Bank)                          10,000
+15 Feb 2026   Credit Card Payment                                    2,000
+28 Feb 2026   SALARY CREDIT — Infosys               60,500
+10 Mar 2026   EMI — Home Loan (Axis Bank)                          10,000
+15 Mar 2026   Credit Card Payment                                    2,000
+31 Mar 2026   SALARY CREDIT — Infosys               59,800
+10 Apr 2026   EMI — Home Loan (Axis Bank)                          10,000
+15 Apr 2026   Credit Card Payment                                    2,000
+30 Apr 2026   SALARY CREDIT — Infosys               60,200
+10 May 2026   EMI — Home Loan (Axis Bank)                          10,000
+15 May 2026   Credit Card Payment                                    2,000
+30 May 2026   SALARY CREDIT — Infosys               60,000
+10 Jun 2026   EMI — Home Loan (Axis Bank)                          10,000
+15 Jun 2026   Credit Card Payment                                    2,000
+30 Jun 2026   SALARY CREDIT — Infosys               59,500
+------------------------------------------------------------------------
+
+DEPOSIT SUMMARY (Jan–Jun 2026)
+------------------------------------------------------------------------
+Monthly Deposits  :  60,000 | 60,500 | 59,800 | 60,200 | 60,000 | 59,500
+Average Monthly Deposit        :  INR 60,000
+Income Variability (std/mean)  :  5%
+
+RECURRING MONTHLY OBLIGATIONS
+------------------------------------------------------------------------
+Home Loan EMI (Axis Bank)      :  INR 10,000
+Credit Card (minimum payment)  :  INR  2,000
+                                  ---------
+TOTAL MONTHLY OBLIGATIONS      :  INR 12,000
+
+Closing Balance (30 Jun 2026)  :  INR 2,14,300
+================================================================================

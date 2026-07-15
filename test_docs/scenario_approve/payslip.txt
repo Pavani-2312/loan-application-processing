@@ -1,0 +1,41 @@
+================================================================================
+                         SALARY SLIP — JUNE 2026
+================================================================================
+Employee Name     : Priya Sharma
+Employee ID       : EMP-10042
+Designation       : Senior Software Engineer
+Department        : Engineering
+
+Employer          : Infosys Technologies Ltd.
+Address           : Electronics City, Phase 1, Bengaluru, Karnataka - 560100
+PAN               : ABCPS1234D
+Employment Start  : June 2023
+Employment Tenure : 36 months (3 years)
+
+Pay Period        : 01 June 2026 – 30 June 2026
+Pay Date          : 30 June 2026
+
+--------------------------------------------------------------------------------
+EARNINGS
+--------------------------------------------------------------------------------
+Basic Salary                    :  INR  4,20,000  (monthly: INR 35,000)
+House Rent Allowance (HRA)      :  INR  1,20,000  (monthly: INR 10,000)
+Special Allowance               :  INR    60,000  (monthly: INR  5,000)
+Transport Allowance             :  INR    60,000  (monthly: INR  5,000)
+                                  --------------------------------
+GROSS MONTHLY INCOME            :                 INR     60,000
+                                  ================================
+
+--------------------------------------------------------------------------------
+DEDUCTIONS
+--------------------------------------------------------------------------------
+Provident Fund (12%)            :  INR  4,200
+Professional Tax                :  INR    200
+TDS (Income Tax)                :  INR  5,600
+                                  ---------
+TOTAL DEDUCTIONS                :  INR 10,000
+                                  =========
+
+NET MONTHLY SALARY              :  INR 50,000
+================================================================================
+Authorised Signatory: HR Department, Infosys Technologies Ltd.
