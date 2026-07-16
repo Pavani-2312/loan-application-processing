@@ -1,0 +1,43 @@
+================================================================================
+                         SALARY SLIP — JUNE 2026
+================================================================================
+Employee Name     : Rajesh Gupta
+Employee ID       : EMP-GOV-38812
+Designation       : Section Officer
+Department        : Revenue & Accounts
+
+Employer          : Government of Uttar Pradesh
+Address           : Secretariat, Civil Lines, Allahabad, Uttar Pradesh - 211001
+PAN               : AHZRG4512K
+Employment Start  : January 2007
+Employment Tenure : 234 months (19 years 6 months)
+
+Pay Period        : 01 June 2026 – 30 June 2026
+Pay Date          : 30 June 2026
+
+--------------------------------------------------------------------------------
+EARNINGS
+--------------------------------------------------------------------------------
+Basic Pay (7th CPC)             :  INR  3,30,000  (monthly: INR 27,500)
+Dearness Allowance (46%)        :  INR  1,51,800  (monthly: INR 12,650)
+House Rent Allowance            :  INR    99,000  (monthly: INR  8,250)
+Transport Allowance             :  INR    21,600  (monthly: INR  1,800)
+Medical Allowance               :  INR    12,000  (monthly: INR  1,000)
+                                  --------------------------------
+GROSS MONTHLY INCOME            :                 INR     51,200
+                                  ================================
+
+--------------------------------------------------------------------------------
+DEDUCTIONS
+--------------------------------------------------------------------------------
+GPF (10%)                       :  INR  2,750
+NPS Contribution                :  INR  2,750
+Professional Tax                :  INR    200
+TDS (Income Tax)                :  INR  2,800
+                                  ---------
+TOTAL DEDUCTIONS                :  INR  8,500
+                                  =========
+
+NET MONTHLY SALARY              :  INR 42,700
+================================================================================
+Authorised Signatory: Accounts Officer, Government of Uttar Pradesh

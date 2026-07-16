@@ -1,0 +1,64 @@
+================================================================================
+              STATE BANK OF INDIA — ACCOUNT STATEMENT
+================================================================================
+Account Holder    : Nitin Sharma
+Account Number    : SBI-XXXXXX-4421
+Account Type      : Savings Account
+Branch            : Indira Nagar, Lucknow
+IFSC              : SBIN0009812
+
+Statement Period  : 01 January 2026 – 30 June 2026
+Statement Date    : 30 June 2026
+
+Credit Bureau Score (as on 30 June 2026) : 610
+Note: Score reflects a personal loan default (June 2024, settled Dec 2024)
+      and two missed credit card payments (Aug–Sep 2025).
+================================================================================
+
+DATE          DESCRIPTION                        CREDIT (INR)    DEBIT (INR)
+------------------------------------------------------------------------
+01 Jan 2026   Opening Balance                                         —
+15 Jan 2026   Transfer from family                 5,000
+22 Jan 2026   Personal Loan EMI (Bajaj)                            9,000
+31 Jan 2026   Misc credit                          4,000
+10 Feb 2026   Personal Loan EMI (Bajaj)                            9,000
+20 Feb 2026   Personal Loan EMI (Kotak)                            9,000
+28 Feb 2026   SALARY CREDIT — HUL                30,200
+10 Mar 2026   Personal Loan EMI (Bajaj)                            9,000
+20 Mar 2026   Personal Loan EMI (Kotak)                            9,000
+31 Mar 2026   SALARY CREDIT — HUL                29,500
+10 Apr 2026   Personal Loan EMI (Bajaj)                            9,000
+20 Apr 2026   Personal Loan EMI (Kotak)                            9,000
+30 Apr 2026   SALARY CREDIT — HUL                30,500
+10 May 2026   Personal Loan EMI (Bajaj)                            9,000
+20 May 2026   Personal Loan EMI (Kotak)                            9,000
+31 May 2026   SALARY CREDIT — HUL                29,800
+10 Jun 2026   Personal Loan EMI (Bajaj)                            9,000
+20 Jun 2026   Personal Loan EMI (Kotak)                            9,000
+30 Jun 2026   SALARY CREDIT — HUL                30,000
+------------------------------------------------------------------------
+
+DEPOSIT SUMMARY (Apr–Jun 2026, post-employment)
+------------------------------------------------------------------------
+Monthly Deposits (salary only) :  30,200 | 29,500 | 30,500 | 29,800 | 30,000
+Average Monthly Deposit        :  INR 30,000
+Income Variability (std/mean)  :  50%
+(Note: High variability due to irregular pre-employment deposits in Jan–Feb)
+
+RECURRING MONTHLY OBLIGATIONS
+------------------------------------------------------------------------
+Personal Loan EMI (Bajaj Finance)  :  INR  9,000
+Personal Loan EMI (Kotak Bank)     :  INR  9,000
+                                      ---------
+TOTAL MONTHLY OBLIGATIONS          :  INR 18,000
+
+Closing Balance (30 Jun 2026)      :  INR  3,500
+================================================================================
+
+NOTE: DTI = 18,000 / 30,000 = 0.60 → high_risk (score 0.0, Clause 3.1(d))
+      Bureau = 610 → elevated (score 0.4, Clause 4.1(c))
+      Tenure = 3 months → high_risk (score 0.0, Clause 5.1(d))
+      Variability = 50% → high_risk (score 0.0, Clause 5.2(d))
+      Income stability = min(0.0, 0.0) = 0.0
+      Composite = 0.0*0.40 + 0.4*0.35 + 0.0*0.25 = 0+0.14+0 = 0.14 → DECLINE
+================================================================================

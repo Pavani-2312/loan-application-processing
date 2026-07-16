@@ -1,0 +1,59 @@
+================================================================================
+              HDFC BANK — ACCOUNT STATEMENT
+================================================================================
+Account Holder    : Sneha Patel
+Account Number    : HDFC-XXXXXX-6614
+Account Type      : Savings Account
+Branch            : Vastrapur, Ahmedabad
+IFSC              : HDFC0005566
+
+Statement Period  : 01 January 2026 – 30 June 2026
+Statement Date    : 30 June 2026
+
+Credit Bureau Score (as on 30 June 2026) : 680
+================================================================================
+
+DATE          DESCRIPTION                        CREDIT (INR)    DEBIT (INR)
+------------------------------------------------------------------------
+01 Jan 2026   Opening Balance                                         —
+31 Jan 2026   SALARY CREDIT — Zydus               45,100
+08 Feb 2026   Car Loan EMI (HDFC)                                 9,000
+10 Feb 2026   Personal Loan EMI (SBI)                             6,750
+28 Feb 2026   SALARY CREDIT — Zydus               44,800
+08 Mar 2026   Car Loan EMI (HDFC)                                 9,000
+10 Mar 2026   Personal Loan EMI (SBI)                             6,750
+31 Mar 2026   SALARY CREDIT — Zydus               45,200
+08 Apr 2026   Car Loan EMI (HDFC)                                 9,000
+10 Apr 2026   Personal Loan EMI (SBI)                             6,750
+30 Apr 2026   SALARY CREDIT — Zydus               44,900
+08 May 2026   Car Loan EMI (HDFC)                                 9,000
+10 May 2026   Personal Loan EMI (SBI)                             6,750
+31 May 2026   SALARY CREDIT — Zydus               45,100
+08 Jun 2026   Car Loan EMI (HDFC)                                 9,000
+10 Jun 2026   Personal Loan EMI (SBI)                             6,750
+30 Jun 2026   SALARY CREDIT — Zydus               44,900
+------------------------------------------------------------------------
+
+DEPOSIT SUMMARY (Jan–Jun 2026)
+------------------------------------------------------------------------
+Monthly Deposits  :  45,100 | 44,800 | 45,200 | 44,900 | 45,100 | 44,900
+Average Monthly Deposit        :  INR 45,000
+Income Variability (std/mean)  :  8%
+
+RECURRING MONTHLY OBLIGATIONS
+------------------------------------------------------------------------
+Car Loan EMI (HDFC)            :  INR  9,000
+Personal Loan EMI (SBI)        :  INR  6,750
+                                  ---------
+TOTAL MONTHLY OBLIGATIONS      :  INR 15,750
+
+Closing Balance (30 Jun 2026)  :  INR 97,200
+================================================================================
+
+NOTE: DTI = 15,750 / 45,000 = 0.35 → moderate (score 0.7, Clause 3.1(b))
+      Bureau = 680 → moderate (score 0.7, Clause 4.1(b))
+      Tenure = 20 months → moderate (score 0.7, Clause 5.1(b))
+      Variability = 8% → low_risk (score 1.0, Clause 5.2(a))
+      Income stability = min(0.7, 1.0) = 0.7 (tenure is binding constraint)
+      Composite = 0.7*0.40 + 0.7*0.35 + 0.7*0.25 = 0.28+0.245+0.175 = 0.70 → REFER
+================================================================================

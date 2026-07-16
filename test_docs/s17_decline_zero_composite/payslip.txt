@@ -1,0 +1,41 @@
+================================================================================
+                         SALARY SLIP — JUNE 2026
+================================================================================
+Employee Name     : Arun Tiwari
+Employee ID       : EMP-91234
+Designation       : Sales Associate
+Department        : Retail
+
+Employer          : Reliance Digital
+Address           : Phoenix Palassio Mall, Lucknow, Uttar Pradesh - 226010
+PAN               : ADJAT5532U
+Employment Start  : February 2026
+Employment Tenure : 5 months
+
+Pay Period        : 01 June 2026 – 30 June 2026
+Pay Date          : 30 June 2026
+
+--------------------------------------------------------------------------------
+EARNINGS
+--------------------------------------------------------------------------------
+Basic Salary                    :  INR  1,44,000  (monthly: INR 12,000)
+House Rent Allowance (HRA)      :  INR    36,000  (monthly: INR  3,000)
+Sales Incentive                 :  INR    60,000  (monthly: INR  5,000)
+                                  --------------------------------
+GROSS MONTHLY INCOME            :                 INR     20,000
+                                  ================================
+
+--------------------------------------------------------------------------------
+DEDUCTIONS
+--------------------------------------------------------------------------------
+Provident Fund (12%)            :  INR  1,440
+Professional Tax                :  INR    200
+                                  ---------
+TOTAL DEDUCTIONS                :  INR  1,640
+                                  =========
+
+NET MONTHLY SALARY              :  INR 18,360
+================================================================================
+NOTE: Incentive component is variable; actual payout varies by monthly targets.
+================================================================================
+Authorised Signatory: HR Department, Reliance Digital

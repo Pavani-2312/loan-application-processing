@@ -1,0 +1,41 @@
+================================================================================
+                         SALARY SLIP — JUNE 2026
+================================================================================
+Employee Name     : Pradeep Nambiar
+Employee ID       : EMP-38890
+Designation       : Customer Service Executive
+Department        : Call Centre Operations
+
+Employer          : Mphasis Ltd.
+Address           : Bagmane Tech Park, C.V. Raman Nagar, Bengaluru - 560093
+PAN               : ACJPN3312T
+Employment Start  : September 2025
+Employment Tenure : 9 months
+
+Pay Period        : 01 June 2026 – 30 June 2026
+Pay Date          : 30 June 2026
+
+--------------------------------------------------------------------------------
+EARNINGS
+--------------------------------------------------------------------------------
+Basic Salary                    :  INR  1,92,000  (monthly: INR 16,000)
+House Rent Allowance (HRA)      :  INR    72,000  (monthly: INR  6,000)
+Special Allowance               :  INR    36,000  (monthly: INR  3,000)
+Night Shift Allowance           :  INR    36,000  (monthly: INR  3,000)
+                                  --------------------------------
+GROSS MONTHLY INCOME            :                 INR     28,000
+                                  ================================
+
+--------------------------------------------------------------------------------
+DEDUCTIONS
+--------------------------------------------------------------------------------
+Provident Fund (12%)            :  INR  1,920
+Professional Tax                :  INR    200
+TDS (Income Tax)                :  INR    800
+                                  ---------
+TOTAL DEDUCTIONS                :  INR  2,920
+                                  =========
+
+NET MONTHLY SALARY              :  INR 25,080
+================================================================================
+Authorised Signatory: HR Department, Mphasis Ltd.

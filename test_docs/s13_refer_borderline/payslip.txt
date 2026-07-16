@@ -1,0 +1,41 @@
+================================================================================
+                         SALARY SLIP — JUNE 2026
+================================================================================
+Employee Name     : Ramesh Iyer
+Employee ID       : EMP-19023
+Designation       : Territory Sales Manager
+Department        : FMCG Sales
+
+Employer          : ITC Ltd.
+Address           : ITC Centre, 760 Anna Salai, Chennai, Tamil Nadu - 600002
+PAN               : AEHRI5521Q
+Employment Start  : April 2025
+Employment Tenure : 15 months
+
+Pay Period        : 01 June 2026 – 30 June 2026
+Pay Date          : 30 June 2026
+
+--------------------------------------------------------------------------------
+EARNINGS
+--------------------------------------------------------------------------------
+Basic Salary                    :  INR  2,40,000  (monthly: INR 20,000)
+House Rent Allowance (HRA)      :  INR    96,000  (monthly: INR  8,000)
+Special Allowance               :  INR    72,000  (monthly: INR  6,000)
+Conveyance                      :  INR    36,000  (monthly: INR  3,000)
+                                  --------------------------------
+GROSS MONTHLY INCOME            :                 INR     37,000
+                                  ================================
+
+--------------------------------------------------------------------------------
+DEDUCTIONS
+--------------------------------------------------------------------------------
+Provident Fund (12%)            :  INR  2,400
+Professional Tax                :  INR    200
+TDS (Income Tax)                :  INR  1,500
+                                  ---------
+TOTAL DEDUCTIONS                :  INR  4,100
+                                  =========
+
+NET MONTHLY SALARY              :  INR 32,900
+================================================================================
+Authorised Signatory: HR Department, ITC Ltd.

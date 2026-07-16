@@ -1,0 +1,41 @@
+================================================================================
+                         SALARY SLIP — JUNE 2026
+================================================================================
+Employee Name     : Suresh Venkataraman
+Employee ID       : EMP-00812
+Designation       : Principal Architect
+Department        : Technology
+
+Employer          : Tata Consultancy Services Ltd.
+Address           : Sipcot IT Park, Sholinganallur, Chennai, Tamil Nadu - 600119
+PAN               : AGHSV7890I
+Employment Start  : April 2019
+Employment Tenure : 87 months (7 years 3 months)
+
+Pay Period        : 01 June 2026 – 30 June 2026
+Pay Date          : 30 June 2026
+
+--------------------------------------------------------------------------------
+EARNINGS
+--------------------------------------------------------------------------------
+Basic Salary                    :  INR  8,00,000  (monthly: INR  66,667)
+House Rent Allowance (HRA)      :  INR  3,20,000  (monthly: INR  26,667)
+Special Allowance               :  INR  2,40,000  (monthly: INR  20,000)
+Vehicle Allowance               :  INR    96,000  (monthly: INR   8,000)
+                                  --------------------------------
+GROSS MONTHLY INCOME            :                 INR  1,21,334
+                                  ================================
+
+--------------------------------------------------------------------------------
+DEDUCTIONS
+--------------------------------------------------------------------------------
+Provident Fund (12%)            :  INR  8,000
+Professional Tax                :  INR    200
+TDS (Income Tax)                :  INR 22,000
+                                  ---------
+TOTAL DEDUCTIONS                :  INR 30,200
+                                  =========
+
+NET MONTHLY SALARY              :  INR 91,134
+================================================================================
+Authorised Signatory: HR Department, Tata Consultancy Services Ltd.

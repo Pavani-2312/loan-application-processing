@@ -1,0 +1,42 @@
+================================================================================
+                         SALARY SLIP — JUNE 2026
+================================================================================
+Employee Name     : Meera Pillai
+Employee ID       : EMP-55210
+Designation       : Associate Professor
+Department        : Computer Science
+
+Employer          : College of Engineering Trivandrum
+Address           : Thiruvananthapuram, Kerala - 695016
+PAN               : BDFMP2233J
+Employment Start  : August 2018
+Employment Tenure : 94 months (7 years 10 months)
+
+Pay Period        : 01 June 2026 – 30 June 2026
+Pay Date          : 30 June 2026
+
+--------------------------------------------------------------------------------
+EARNINGS
+--------------------------------------------------------------------------------
+Basic Salary                    :  INR  4,50,000  (monthly: INR 37,500)
+Dearness Allowance              :  INR  1,80,000  (monthly: INR 15,000)
+House Rent Allowance (HRA)      :  INR    60,000  (monthly: INR  5,000)
+Transport Allowance             :  INR    30,000  (monthly: INR  2,500)
+                                  --------------------------------
+GROSS MONTHLY INCOME            :                 INR     60,000
+                                  ================================
+
+--------------------------------------------------------------------------------
+DEDUCTIONS
+--------------------------------------------------------------------------------
+Provident Fund (12%)            :  INR  4,500
+Professional Tax                :  INR    200
+TDS (Income Tax)                :  INR  5,000
+NPS Contribution                :  INR  3,000
+                                  ---------
+TOTAL DEDUCTIONS                :  INR 12,700
+                                  =========
+
+NET MONTHLY SALARY              :  INR 47,300
+================================================================================
+Authorised Signatory: Accounts Department, CET Trivandrum

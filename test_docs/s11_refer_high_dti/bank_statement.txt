@@ -1,0 +1,71 @@
+================================================================================
+              YES BANK — ACCOUNT STATEMENT
+================================================================================
+Account Holder    : Vikram Singh
+Account Number    : YES-XXXXXX-2281
+Account Type      : Savings Account
+Branch            : Rajpur Road, Dehradun
+IFSC              : YESB0001234
+
+Statement Period  : 01 January 2026 – 30 June 2026
+Statement Date    : 30 June 2026
+
+Credit Bureau Score (as on 30 June 2026) : 680
+================================================================================
+
+DATE          DESCRIPTION                        CREDIT (INR)    DEBIT (INR)
+------------------------------------------------------------------------
+01 Jan 2026   Opening Balance                                         —
+31 Jan 2026   SALARY CREDIT — Yes Bank            60,100
+05 Feb 2026   Home Loan EMI (HDFC)                                12,000
+08 Feb 2026   Car Loan EMI (Yes Bank)                              7,000
+10 Feb 2026   Personal Loan EMI (Axis)                             2,000
+28 Feb 2026   SALARY CREDIT — Yes Bank            59,700
+05 Mar 2026   Home Loan EMI (HDFC)                                12,000
+08 Mar 2026   Car Loan EMI (Yes Bank)                              7,000
+10 Mar 2026   Personal Loan EMI (Axis)                             2,000
+31 Mar 2026   SALARY CREDIT — Yes Bank            60,200
+05 Apr 2026   Home Loan EMI (HDFC)                                12,000
+08 Apr 2026   Car Loan EMI (Yes Bank)                              7,000
+10 Apr 2026   Personal Loan EMI (Axis)                             2,000
+30 Apr 2026   SALARY CREDIT — Yes Bank            60,000
+05 May 2026   Home Loan EMI (HDFC)                                12,000
+08 May 2026   Car Loan EMI (Yes Bank)                              7,000
+10 May 2026   Personal Loan EMI (Axis)                             2,000
+31 May 2026   SALARY CREDIT — Yes Bank            60,300
+05 Jun 2026   Home Loan EMI (HDFC)                                12,000
+08 Jun 2026   Car Loan EMI (Yes Bank)                              7,000
+10 Jun 2026   Personal Loan EMI (Axis)                             2,000
+30 Jun 2026   SALARY CREDIT — Yes Bank            59,700
+------------------------------------------------------------------------
+
+DEPOSIT SUMMARY (Jan–Jun 2026)
+------------------------------------------------------------------------
+Monthly Deposits  :  60,100 | 59,700 | 60,200 | 60,000 | 60,300 | 59,700
+Average Monthly Deposit        :  INR 60,000
+Income Variability (std/mean)  :  4%
+
+RECURRING MONTHLY OBLIGATIONS
+------------------------------------------------------------------------
+Home Loan EMI (HDFC)           :  INR 12,000
+Car Loan EMI (Yes Bank)        :  INR  7,000
+Personal Loan EMI (Axis)       :  INR  2,000
+                                  ---------
+TOTAL MONTHLY OBLIGATIONS      :  INR 21,000
+
+Closing Balance (30 Jun 2026)  :  INR 1,62,300
+================================================================================
+
+NOTE: DTI = 21,000 / 60,000 = 0.35 → moderate (score 0.7, Clause 3.1(b))
+      Bureau = 680 → moderate (score 0.7, Clause 4.1(b))
+      Tenure = 80 months → low_risk (score 1.0, Clause 5.1(a))
+      Variability = 4% → low_risk (score 1.0, Clause 5.2(a))
+      Income stability = min(1.0, 1.0) = 1.0
+      Composite = 0.7*0.40 + 0.7*0.35 + 1.0*0.25 = 0.28+0.245+0.25 = 0.775 → APPROVE
+
+      Corrected to hit REFER: reduce tenure to 20 months
+      Tenure = 20 months → moderate (score 0.7, Clause 5.1(b))
+      Income stability = min(0.7, 1.0) = 0.7
+      Composite = 0.7*0.40 + 0.7*0.35 + 0.7*0.25 = 0.28+0.245+0.175 = 0.70 → REFER ✓
+      See payslip: Employment Start = November 2024, Tenure = 20 months
+================================================================================

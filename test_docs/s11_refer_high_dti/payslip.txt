@@ -1,0 +1,41 @@
+================================================================================
+                         SALARY SLIP — JUNE 2026
+================================================================================
+Employee Name     : Vikram Singh
+Employee ID       : EMP-63210
+Designation       : Branch Manager
+Department        : Operations
+
+Employer          : Yes Bank Ltd.
+Address           : Nehru Place, New Delhi - 110019
+PAN               : ACGVS2244O
+Employment Start  : November 2024
+Employment Tenure : 20 months
+
+Pay Period        : 01 June 2026 – 30 June 2026
+Pay Date          : 30 June 2026
+
+--------------------------------------------------------------------------------
+EARNINGS
+--------------------------------------------------------------------------------
+Basic Salary                    :  INR  4,20,000  (monthly: INR 35,000)
+House Rent Allowance (HRA)      :  INR  1,68,000  (monthly: INR 14,000)
+Special Allowance               :  INR    84,000  (monthly: INR  7,000)
+Performance Bonus (monthly)     :  INR    48,000  (monthly: INR  4,000)
+                                  --------------------------------
+GROSS MONTHLY INCOME            :                 INR     60,000
+                                  ================================
+
+--------------------------------------------------------------------------------
+DEDUCTIONS
+--------------------------------------------------------------------------------
+Provident Fund (12%)            :  INR  4,200
+Professional Tax                :  INR    200
+TDS (Income Tax)                :  INR  6,500
+                                  ---------
+TOTAL DEDUCTIONS                :  INR 10,900
+                                  =========
+
+NET MONTHLY SALARY              :  INR 49,100
+================================================================================
+Authorised Signatory: HR Department, Yes Bank Ltd.

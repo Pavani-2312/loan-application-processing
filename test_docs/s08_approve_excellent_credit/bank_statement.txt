@@ -1,0 +1,58 @@
+================================================================================
+              KOTAK MAHINDRA BANK — ACCOUNT STATEMENT
+================================================================================
+Account Holder    : Ananya Krishnamurthy
+Account Number    : KMB-XXXXXX-4423
+Account Type      : Savings Account
+Branch            : Jubilee Hills, Hyderabad
+IFSC              : KKBK0004567
+
+Statement Period  : 01 January 2026 – 30 June 2026
+Statement Date    : 30 June 2026
+
+Credit Bureau Score (as on 30 June 2026) : 820
+================================================================================
+
+DATE          DESCRIPTION                        CREDIT (INR)    DEBIT (INR)
+------------------------------------------------------------------------
+01 Jan 2026   Opening Balance                                         —
+31 Jan 2026   SALARY CREDIT — Amazon              77,500
+05 Feb 2026   Home Loan EMI (ICICI Bank)                          15,000
+08 Feb 2026   Credit Card Payment (Kotak)                          2,000
+28 Feb 2026   SALARY CREDIT — Amazon              78,000
+05 Mar 2026   Home Loan EMI (ICICI Bank)                          15,000
+08 Mar 2026   Credit Card Payment (Kotak)                          2,000
+31 Mar 2026   SALARY CREDIT — Amazon              77,200
+05 Apr 2026   Home Loan EMI (ICICI Bank)                          15,000
+08 Apr 2026   Credit Card Payment (Kotak)                          2,000
+30 Apr 2026   SALARY CREDIT — Amazon              77,800
+05 May 2026   Home Loan EMI (ICICI Bank)                          15,000
+08 May 2026   Credit Card Payment (Kotak)                          2,000
+31 May 2026   SALARY CREDIT — Amazon              77,500
+05 Jun 2026   Home Loan EMI (ICICI Bank)                          15,000
+08 Jun 2026   Credit Card Payment (Kotak)                          2,000
+30 Jun 2026   SALARY CREDIT — Amazon              77,000
+------------------------------------------------------------------------
+
+DEPOSIT SUMMARY (Jan–Jun 2026)
+------------------------------------------------------------------------
+Monthly Deposits  :  77,500 | 78,000 | 77,200 | 77,800 | 77,500 | 77,000
+Average Monthly Deposit        :  INR 77,500
+Income Variability (std/mean)  :  3%
+
+RECURRING MONTHLY OBLIGATIONS
+------------------------------------------------------------------------
+Home Loan EMI (ICICI Bank)     :  INR 15,000
+Credit Card (minimum payment)  :  INR  2,000
+                                  ---------
+TOTAL MONTHLY OBLIGATIONS      :  INR 17,000
+
+Closing Balance (30 Jun 2026)  :  INR 7,25,400
+================================================================================
+
+NOTE: DTI = 17,000 / 77,500 = 0.219 → low_risk (Clause 3.1(a))
+      Bureau = 820 → low_risk (Clause 4.1(a))
+      Tenure = 63 months → low_risk (Clause 5.1(a))
+      Variability = 3% → low_risk (Clause 5.2(a))
+      Composite = 1.00 → APPROVE
+================================================================================

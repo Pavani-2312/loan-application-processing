@@ -1,0 +1,41 @@
+================================================================================
+                         SALARY SLIP — JUNE 2026
+================================================================================
+Employee Name     : Sandeep Kulkarni
+Employee ID       : EMP-59034
+Designation       : Senior Engineer — Civil
+Department        : Infrastructure Projects
+
+Employer          : Larsen & Toubro Ltd.
+Address           : L&T House, N.M. Marg, Ballard Estate, Mumbai - 400001
+PAN               : BGHSK4421S
+Employment Start  : June 2023
+Employment Tenure : 36 months (3 years)
+
+Pay Period        : 01 June 2026 – 30 June 2026
+Pay Date          : 30 June 2026
+
+--------------------------------------------------------------------------------
+EARNINGS
+--------------------------------------------------------------------------------
+Basic Salary                    :  INR  3,60,000  (monthly: INR 30,000)
+House Rent Allowance (HRA)      :  INR  1,44,000  (monthly: INR 12,000)
+Special Allowance               :  INR    96,000  (monthly: INR  8,000)
+Site Allowance                  :  INR    60,000  (monthly: INR  5,000)
+                                  --------------------------------
+GROSS MONTHLY INCOME            :                 INR     55,000
+                                  ================================
+
+--------------------------------------------------------------------------------
+DEDUCTIONS
+--------------------------------------------------------------------------------
+Provident Fund (12%)            :  INR  3,600
+Professional Tax                :  INR    200
+TDS (Income Tax)                :  INR  4,800
+                                  ---------
+TOTAL DEDUCTIONS                :  INR  8,600
+                                  =========
+
+NET MONTHLY SALARY              :  INR 46,400
+================================================================================
+Authorised Signatory: HR Department, Larsen & Toubro Ltd.

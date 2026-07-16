@@ -1,0 +1,41 @@
+================================================================================
+                         SALARY SLIP — JUNE 2026
+================================================================================
+Employee Name     : Deepak Agarwal
+Employee ID       : EMP-88432
+Designation       : Senior Sales Executive
+Department        : B2B Sales
+
+Employer          : Mahindra & Mahindra Ltd.
+Address           : Mahindra Towers, Dr. G.M. Bhosale Marg, Mumbai - 400018
+PAN               : ABCDA3421M
+Employment Start  : January 2025
+Employment Tenure : 18 months
+
+Pay Period        : 01 June 2026 – 30 June 2026
+Pay Date          : 30 June 2026
+
+--------------------------------------------------------------------------------
+EARNINGS
+--------------------------------------------------------------------------------
+Basic Salary                    :  INR  2,40,000  (monthly: INR 20,000)
+House Rent Allowance (HRA)      :  INR  1,08,000  (monthly: INR  9,000)
+Special Allowance               :  INR    72,000  (monthly: INR  6,000)
+Conveyance                      :  INR    60,000  (monthly: INR  5,000)
+                                  --------------------------------
+GROSS MONTHLY INCOME            :                 INR     40,000
+                                  ================================
+
+--------------------------------------------------------------------------------
+DEDUCTIONS
+--------------------------------------------------------------------------------
+Provident Fund (12%)            :  INR  2,400
+Professional Tax                :  INR    200
+TDS (Income Tax)                :  INR  1,800
+                                  ---------
+TOTAL DEDUCTIONS                :  INR  4,400
+                                  =========
+
+NET MONTHLY SALARY              :  INR 35,600
+================================================================================
+Authorised Signatory: HR Department, Mahindra & Mahindra Ltd.

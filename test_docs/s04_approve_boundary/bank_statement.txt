@@ -1,0 +1,58 @@
+================================================================================
+              AXIS BANK — ACCOUNT STATEMENT
+================================================================================
+Account Holder    : Kavya Nair
+Account Number    : AXIS-XXXXXX-3310
+Account Type      : Savings Account
+Branch            : Sadashivanagar, Bengaluru
+IFSC              : UTIB0001122
+
+Statement Period  : 01 January 2026 – 30 June 2026
+Statement Date    : 30 June 2026
+
+Credit Bureau Score (as on 30 June 2026) : 720
+================================================================================
+
+DATE          DESCRIPTION                        CREDIT (INR)    DEBIT (INR)
+------------------------------------------------------------------------
+01 Jan 2026   Opening Balance                                         —
+31 Jan 2026   SALARY CREDIT — Wipro                 60,000
+05 Feb 2026   Home Loan EMI (SBI)                                  16,000
+10 Feb 2026   Credit Card Payment (Axis)                            2,000
+28 Feb 2026   SALARY CREDIT — Wipro                 61,000
+05 Mar 2026   Home Loan EMI (SBI)                                  16,000
+10 Mar 2026   Credit Card Payment (Axis)                            2,000
+31 Mar 2026   SALARY CREDIT — Wipro                 59,500
+05 Apr 2026   Home Loan EMI (SBI)                                  16,000
+10 Apr 2026   Credit Card Payment (Axis)                            2,000
+30 Apr 2026   SALARY CREDIT — Wipro                 60,200
+05 May 2026   Home Loan EMI (SBI)                                  16,000
+10 May 2026   Credit Card Payment (Axis)                            2,000
+30 May 2026   SALARY CREDIT — Wipro                 60,000
+05 Jun 2026   Home Loan EMI (SBI)                                  16,000
+10 Jun 2026   Credit Card Payment (Axis)                            2,000
+30 Jun 2026   SALARY CREDIT — Wipro                 59,300
+------------------------------------------------------------------------
+
+DEPOSIT SUMMARY (Jan–Jun 2026)
+------------------------------------------------------------------------
+Monthly Deposits  :  60,000 | 61,000 | 59,500 | 60,200 | 60,000 | 59,300
+Average Monthly Deposit        :  INR 60,000
+Income Variability (std/mean)  :  10%
+
+RECURRING MONTHLY OBLIGATIONS
+------------------------------------------------------------------------
+Home Loan EMI (SBI)            :  INR 16,000
+Credit Card (minimum payment)  :  INR  2,000
+                                  ---------
+TOTAL MONTHLY OBLIGATIONS      :  INR 18,000
+
+Closing Balance (30 Jun 2026)  :  INR 1,85,400
+================================================================================
+
+NOTE: DTI = 18,000 / 60,000 = 0.30 (exactly on boundary → low_risk per Clause 3.1(a))
+      Bureau score = 720 (exactly on boundary → low_risk per Clause 4.1(a))
+      Tenure = 24 months (exactly on boundary → low_risk per Clause 5.1(a))
+      Variability = 10% (exactly on boundary → low_risk per Clause 5.2(a))
+      Composite = 1.0 * 0.40 + 1.0 * 0.35 + 1.0 * 0.25 = 1.00 → APPROVE
+================================================================================

@@ -1,0 +1,57 @@
+================================================================================
+              UNION BANK OF INDIA — ACCOUNT STATEMENT
+================================================================================
+Account Holder    : Sandeep Kulkarni
+Account Number    : UBI-XXXXXX-8812
+Account Type      : Savings Account
+Branch            : Kothrud, Pune
+IFSC              : UBIN0554321
+
+Statement Period  : 01 January 2026 – 30 June 2026
+Statement Date    : 30 June 2026
+
+Credit Bureau Score (as on 30 June 2026) : 555
+Note: Bureau reflects a written-off credit card account (2021) and an
+      outstanding dispute on a co-signed personal loan (2023).
+      Multiple late payment markers across 2022–2024.
+================================================================================
+
+DATE          DESCRIPTION                        CREDIT (INR)    DEBIT (INR)
+------------------------------------------------------------------------
+01 Jan 2026   Opening Balance                                         —
+31 Jan 2026   SALARY CREDIT — L&T                 55,100
+10 Feb 2026   Home Loan EMI (LIC Housing)                         30,000
+28 Feb 2026   SALARY CREDIT — L&T                 54,900
+10 Mar 2026   Home Loan EMI (LIC Housing)                         30,000
+31 Mar 2026   SALARY CREDIT — L&T                 55,100
+10 Apr 2026   Home Loan EMI (LIC Housing)                         30,000
+30 Apr 2026   SALARY CREDIT — L&T                 54,800
+10 May 2026   Home Loan EMI (LIC Housing)                         30,000
+31 May 2026   SALARY CREDIT — L&T                 55,200
+10 Jun 2026   Home Loan EMI (LIC Housing)                         30,000
+30 Jun 2026   SALARY CREDIT — L&T                 54,900
+------------------------------------------------------------------------
+
+DEPOSIT SUMMARY (Jan–Jun 2026)
+------------------------------------------------------------------------
+Monthly Deposits  :  55,100 | 54,900 | 55,100 | 54,800 | 55,200 | 54,900
+Average Monthly Deposit        :  INR 55,000
+Income Variability (std/mean)  :  5%
+
+RECURRING MONTHLY OBLIGATIONS
+------------------------------------------------------------------------
+Home Loan EMI (LIC Housing)    :  INR 30,000
+                                  ---------
+TOTAL MONTHLY OBLIGATIONS      :  INR 30,000
+
+Closing Balance (30 Jun 2026)  :  INR 74,800
+================================================================================
+
+NOTE: DTI = 30,000 / 55,000 = 0.545 → high_risk (score 0.0, Clause 3.1(d))
+      Bureau = 555 → high_risk (score 0.0, Clause 4.1(d))
+      Tenure = 36 months → low_risk (score 1.0, Clause 5.1(a))
+      Variability = 5% → low_risk (score 1.0, Clause 5.2(a))
+      Income stability = min(1.0, 1.0) = 1.0
+      Composite = 0.0*0.40 + 0.0*0.35 + 1.0*0.25 = 0+0+0.25 = 0.25 → DECLINE
+      Good stability cannot offset failed DTI and poor credit history.
+================================================================================

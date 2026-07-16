@@ -1,0 +1,41 @@
+================================================================================
+                         SALARY SLIP — JUNE 2026
+================================================================================
+Employee Name     : Kiran Reddy
+Employee ID       : EMP-66234
+Designation       : Business Development Executive
+Department        : Partnership & Alliances
+
+Employer          : Swiggy (Bundl Technologies Pvt. Ltd.)
+Address           : Embassy Tech Village, Bengaluru, Karnataka - 560103
+PAN               : ACGKR7712V
+Employment Start  : November 2025
+Employment Tenure : 8 months
+
+Pay Period        : 01 June 2026 – 30 June 2026
+Pay Date          : 30 June 2026
+
+--------------------------------------------------------------------------------
+EARNINGS
+--------------------------------------------------------------------------------
+Basic Salary                    :  INR  2,64,000  (monthly: INR 22,000)
+House Rent Allowance (HRA)      :  INR  1,08,000  (monthly: INR  9,000)
+Special Allowance               :  INR    60,000  (monthly: INR  5,000)
+Performance Variable            :  INR    48,000  (monthly: INR  4,000)
+                                  --------------------------------
+GROSS MONTHLY INCOME            :                 INR     40,000
+                                  ================================
+
+--------------------------------------------------------------------------------
+DEDUCTIONS
+--------------------------------------------------------------------------------
+Provident Fund (12%)            :  INR  2,640
+Professional Tax                :  INR    200
+TDS (Income Tax)                :  INR  2,000
+                                  ---------
+TOTAL DEDUCTIONS                :  INR  4,840
+                                  =========
+
+NET MONTHLY SALARY              :  INR 35,160
+================================================================================
+Authorised Signatory: HR Department, Bundl Technologies Pvt. Ltd.

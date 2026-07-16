@@ -1,0 +1,63 @@
+================================================================================
+              KARUR VYSYA BANK — ACCOUNT STATEMENT
+================================================================================
+Account Holder    : Divya Menon
+Account Number    : KVB-XXXXXX-9921
+Account Type      : Savings Account
+Branch            : Palarivattom, Kochi
+IFSC              : KVBL0001234
+
+Statement Period  : 01 January 2026 – 30 June 2026
+Statement Date    : 30 June 2026
+
+Credit Bureau Score (as on 30 June 2026) : 650
+Note: Score reflects one late payment on a consumer durable loan (Oct 2025),
+      now regularised. No write-offs on record.
+================================================================================
+
+DATE          DESCRIPTION                        CREDIT (INR)    DEBIT (INR)
+------------------------------------------------------------------------
+01 Jan 2026   Opening Balance                                         —
+31 Jan 2026   SALARY CREDIT — Byju's              28,000
+10 Feb 2026   Personal Loan EMI (KVB)                              7,000
+12 Feb 2026   Consumer Durable EMI (Bajaj)                         5,600
+28 Feb 2026   SALARY CREDIT — Byju's              43,000
+10 Mar 2026   Personal Loan EMI (KVB)                              7,000
+12 Mar 2026   Consumer Durable EMI (Bajaj)                         5,600
+31 Mar 2026   SALARY CREDIT — Byju's              32,000
+10 Apr 2026   Personal Loan EMI (KVB)                              7,000
+12 Apr 2026   Consumer Durable EMI (Bajaj)                         5,600
+30 Apr 2026   SALARY CREDIT — Byju's              45,000
+10 May 2026   Personal Loan EMI (KVB)                              7,000
+12 May 2026   Consumer Durable EMI (Bajaj)                         5,600
+31 May 2026   SALARY CREDIT — Byju's              30,000
+10 Jun 2026   Personal Loan EMI (KVB)                              7,000
+12 Jun 2026   Consumer Durable EMI (Bajaj)                         5,600
+30 Jun 2026   SALARY CREDIT — Byju's              38,000
+------------------------------------------------------------------------
+
+DEPOSIT SUMMARY (Jan–Jun 2026)
+------------------------------------------------------------------------
+Monthly Deposits  :  28,000 | 43,000 | 32,000 | 45,000 | 30,000 | 38,000
+Average Monthly Deposit        :  INR 36,000
+Income Variability (std/mean)  :  26%
+
+RECURRING MONTHLY OBLIGATIONS
+------------------------------------------------------------------------
+Personal Loan EMI (KVB)            :  INR  7,000
+Consumer Durable EMI (Bajaj)       :  INR  5,600
+                                      ---------
+TOTAL MONTHLY OBLIGATIONS          :  INR 12,600
+
+Closing Balance (30 Jun 2026)      :  INR 61,000
+================================================================================
+
+NOTE: DTI = 12,600 / 36,000 = 0.35 → moderate (score 0.7, Clause 3.1(b))
+      Bureau = 650 → moderate (score 0.7, Clause 4.1(b))
+      Tenure = 12 months → moderate (score 0.7, Clause 5.1(b))
+      Variability = 26% → elevated (score 0.4, Clause 5.2(c))
+      Income stability = min(0.7, 0.4) = 0.4 (variability is binding constraint)
+      Composite = 0.7*0.40 + 0.7*0.35 + 0.4*0.25 = 0.28+0.245+0.10 = 0.625 → DECLINE
+      Note: Just below the REFER threshold of 0.65. Income variability is the
+      deciding factor — moderate tenure alone is not sufficient to offset it.
+================================================================================

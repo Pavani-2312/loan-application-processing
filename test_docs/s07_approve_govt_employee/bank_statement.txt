@@ -1,0 +1,54 @@
+================================================================================
+              BANK OF BARODA — ACCOUNT STATEMENT
+================================================================================
+Account Holder    : Rajesh Gupta
+Account Number    : BOB-XXXXXX-6612
+Account Type      : Savings Account (Govt Salary Account)
+Branch            : Civil Lines, Allahabad
+IFSC              : BARB0CIVALL
+
+Statement Period  : 01 January 2026 – 30 June 2026
+Statement Date    : 30 June 2026
+
+Credit Bureau Score (as on 30 June 2026) : 760
+================================================================================
+
+DATE          DESCRIPTION                        CREDIT (INR)    DEBIT (INR)
+------------------------------------------------------------------------
+01 Jan 2026   Opening Balance                                         —
+01 Jan 2026   SALARY CREDIT — UP Govt              51,200
+10 Jan 2026   House Loan EMI (SBI)                                 9,500
+01 Feb 2026   SALARY CREDIT — UP Govt              51,200
+10 Feb 2026   House Loan EMI (SBI)                                 9,500
+01 Mar 2026   SALARY CREDIT — UP Govt              51,200
+10 Mar 2026   House Loan EMI (SBI)                                 9,500
+01 Apr 2026   SALARY CREDIT — UP Govt              51,200
+10 Apr 2026   House Loan EMI (SBI)                                 9,500
+01 May 2026   SALARY CREDIT — UP Govt              51,200
+10 May 2026   House Loan EMI (SBI)                                 9,500
+01 Jun 2026   SALARY CREDIT — UP Govt              51,200
+10 Jun 2026   House Loan EMI (SBI)                                 9,500
+------------------------------------------------------------------------
+
+DEPOSIT SUMMARY (Jan–Jun 2026)
+------------------------------------------------------------------------
+Monthly Deposits  :  51,200 | 51,200 | 51,200 | 51,200 | 51,200 | 51,200
+Average Monthly Deposit        :  INR 51,200
+Income Variability (std/mean)  :  0%
+
+RECURRING MONTHLY OBLIGATIONS
+------------------------------------------------------------------------
+House Loan EMI (SBI)           :  INR 9,500
+                                  ---------
+TOTAL MONTHLY OBLIGATIONS      :  INR 9,500
+
+Closing Balance (30 Jun 2026)  :  INR 3,71,000
+================================================================================
+
+NOTE: Salary perfectly fixed — 0% variability is characteristic of government pay.
+      DTI = 9,500 / 51,200 = 0.185 → low_risk (Clause 3.1(a))
+      Bureau = 760 → low_risk (Clause 4.1(a))
+      Tenure = 234 months → low_risk (Clause 5.1(a))
+      Variability = 0% → low_risk (Clause 5.2(a))
+      Composite = 1.00 → APPROVE
+================================================================================

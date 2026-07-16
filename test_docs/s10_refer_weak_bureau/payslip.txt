@@ -1,0 +1,44 @@
+================================================================================
+                         SALARY SLIP — JUNE 2026
+================================================================================
+Employee Name     : Pooja Rao
+Employee ID       : EMP-29045
+Designation       : Software Developer
+Department        : Engineering
+
+Employer          : Persistent Systems Ltd.
+Address           : Bhageerath, 402-B, Senapati Bapat Road, Pune - 411016
+PAN               : ACDPR8890N
+Employment Start  : June 2022
+Employment Tenure : 48 months (4 years)
+
+Pay Period        : 01 June 2026 – 30 June 2026
+Pay Date          : 30 June 2026
+
+--------------------------------------------------------------------------------
+EARNINGS
+--------------------------------------------------------------------------------
+Basic Salary                    :  INR  3,00,000  (monthly: INR 25,000)
+House Rent Allowance (HRA)      :  INR  1,20,000  (monthly: INR 10,000)
+Special Allowance               :  INR    96,000  (monthly: INR  8,000)
+Conveyance Allowance            :  INR    24,000  (monthly: INR  2,000)
+                                  --------------------------------
+GROSS MONTHLY INCOME            :                 INR     45,000
+                                  ================================
+
+--------------------------------------------------------------------------------
+DEDUCTIONS
+--------------------------------------------------------------------------------
+Provident Fund (12%)            :  INR  3,000
+Professional Tax                :  INR    200
+TDS (Income Tax)                :  INR  3,500
+                                  ---------
+TOTAL DEDUCTIONS                :  INR  6,700
+                                  =========
+
+NET MONTHLY SALARY              :  INR 38,300
+================================================================================
+NOTE: Employee underwent a career break of 8 months in 2023 (maternity leave).
+      Tenure with Persistent counted from original hire date (June 2022).
+================================================================================
+Authorised Signatory: HR Department, Persistent Systems Ltd.

@@ -1,0 +1,42 @@
+================================================================================
+                         SALARY SLIP — JUNE 2026
+================================================================================
+Employee Name     : Nitin Sharma
+Employee ID       : EMP-71100
+Designation       : Junior Sales Executive
+Department        : Retail Sales
+
+Employer          : Hindustan Unilever Ltd.
+Address           : Andheri East, Mumbai, Maharashtra - 400069
+PAN               : ACGNS8821R
+Employment Start  : April 2026
+Employment Tenure : 3 months
+
+Pay Period        : 01 June 2026 – 30 June 2026
+Pay Date          : 30 June 2026
+
+--------------------------------------------------------------------------------
+EARNINGS
+--------------------------------------------------------------------------------
+Basic Salary                    :  INR  1,80,000  (monthly: INR 15,000)
+House Rent Allowance (HRA)      :  INR    72,000  (monthly: INR  6,000)
+Special Allowance               :  INR    60,000  (monthly: INR  5,000)
+Variable Incentive              :  INR    48,000  (monthly: INR  4,000)
+                                  --------------------------------
+GROSS MONTHLY INCOME            :                 INR     30,000
+                                  ================================
+
+--------------------------------------------------------------------------------
+DEDUCTIONS
+--------------------------------------------------------------------------------
+Provident Fund (12%)            :  INR  1,800
+Professional Tax                :  INR    200
+                                  ---------
+TOTAL DEDUCTIONS                :  INR  2,000
+                                  =========
+
+NET MONTHLY SALARY              :  INR 28,000
+================================================================================
+NOTE: Employee is in probation. Salary subject to revision post-confirmation.
+================================================================================
+Authorised Signatory: HR Department, Hindustan Unilever Ltd.

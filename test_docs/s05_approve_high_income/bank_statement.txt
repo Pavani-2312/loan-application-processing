@@ -1,0 +1,52 @@
+================================================================================
+              HDFC BANK — ACCOUNT STATEMENT
+================================================================================
+Account Holder    : Suresh Venkataraman
+Account Number    : HDFC-XXXXXX-9901
+Account Type      : Savings Account
+Branch            : Anna Nagar, Chennai
+IFSC              : HDFC0003344
+
+Statement Period  : 01 January 2026 – 30 June 2026
+Statement Date    : 30 June 2026
+
+Credit Bureau Score (as on 30 June 2026) : 790
+================================================================================
+
+DATE          DESCRIPTION                        CREDIT (INR)    DEBIT (INR)
+------------------------------------------------------------------------
+01 Jan 2026   Opening Balance                                         —
+31 Jan 2026   SALARY CREDIT — TCS               1,21,000
+10 Feb 2026   Home Loan EMI (HDFC Bank)                            24,000
+28 Feb 2026   SALARY CREDIT — TCS               1,21,500
+10 Mar 2026   Home Loan EMI (HDFC Bank)                            24,000
+31 Mar 2026   SALARY CREDIT — TCS               1,22,000
+10 Apr 2026   Home Loan EMI (HDFC Bank)                            24,000
+30 Apr 2026   SALARY CREDIT — TCS               1,20,800
+10 May 2026   Home Loan EMI (HDFC Bank)                            24,000
+31 May 2026   SALARY CREDIT — TCS               1,21,200
+10 Jun 2026   Home Loan EMI (HDFC Bank)                            24,000
+30 Jun 2026   SALARY CREDIT — TCS               1,21,500
+------------------------------------------------------------------------
+
+DEPOSIT SUMMARY (Jan–Jun 2026)
+------------------------------------------------------------------------
+Monthly Deposits  :  1,21,000 | 1,21,500 | 1,22,000 | 1,20,800 | 1,21,200 | 1,21,500
+Average Monthly Deposit        :  INR 1,21,334
+Income Variability (std/mean)  :  4%
+
+RECURRING MONTHLY OBLIGATIONS
+------------------------------------------------------------------------
+Home Loan EMI (HDFC Bank)      :  INR 24,000
+                                  ---------
+TOTAL MONTHLY OBLIGATIONS      :  INR 24,000
+
+Closing Balance (30 Jun 2026)  :  INR 9,43,600
+================================================================================
+
+NOTE: DTI = 24,000 / 1,21,334 = 0.198 → low_risk (Clause 3.1(a))
+      Bureau = 790 → low_risk (Clause 4.1(a))
+      Tenure = 87 months → low_risk (Clause 5.1(a))
+      Variability = 4% → low_risk (Clause 5.2(a))
+      Composite = 1.0 → APPROVE
+================================================================================

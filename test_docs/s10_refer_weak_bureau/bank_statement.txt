@@ -1,0 +1,61 @@
+================================================================================
+              BANK OF MAHARASHTRA — ACCOUNT STATEMENT
+================================================================================
+Account Holder    : Pooja Rao
+Account Number    : BOM-XXXXXX-7731
+Account Type      : Savings Account
+Branch            : Shivajinagar, Pune
+IFSC              : MAHB0000567
+
+Statement Period  : 01 January 2026 – 30 June 2026
+Statement Date    : 30 June 2026
+
+Credit Bureau Score (as on 30 June 2026) : 670
+Note: Score reflects a credit card settlement recorded in 2022.
+      No overdue obligations since January 2023.
+================================================================================
+
+DATE          DESCRIPTION                        CREDIT (INR)    DEBIT (INR)
+------------------------------------------------------------------------
+01 Jan 2026   Opening Balance                                         —
+31 Jan 2026   SALARY CREDIT — Persistent          44,200
+10 Feb 2026   Personal Loan EMI (BOM)                              7,000
+10 Feb 2026   Car Loan EMI (ICICI)                                 7,000
+28 Feb 2026   SALARY CREDIT — Persistent          45,800
+10 Mar 2026   Personal Loan EMI (BOM)                              7,000
+10 Mar 2026   Car Loan EMI (ICICI)                                 7,000
+31 Mar 2026   SALARY CREDIT — Persistent          43,500
+10 Apr 2026   Personal Loan EMI (BOM)                              7,000
+10 Apr 2026   Car Loan EMI (ICICI)                                 7,000
+30 Apr 2026   SALARY CREDIT — Persistent          46,200
+10 May 2026   Personal Loan EMI (BOM)                              7,000
+10 May 2026   Car Loan EMI (ICICI)                                 7,000
+31 May 2026   SALARY CREDIT — Persistent          44,800
+10 Jun 2026   Personal Loan EMI (BOM)                              7,000
+10 Jun 2026   Car Loan EMI (ICICI)                                 7,000
+30 Jun 2026   SALARY CREDIT — Persistent          45,500
+------------------------------------------------------------------------
+
+DEPOSIT SUMMARY (Jan–Jun 2026)
+------------------------------------------------------------------------
+Monthly Deposits  :  44,200 | 45,800 | 43,500 | 46,200 | 44,800 | 45,500
+Average Monthly Deposit        :  INR 45,000
+Income Variability (std/mean)  :  22%
+
+RECURRING MONTHLY OBLIGATIONS
+------------------------------------------------------------------------
+Personal Loan EMI (BOM)        :  INR  7,000
+Car Loan EMI (ICICI)           :  INR  7,000
+                                  ---------
+TOTAL MONTHLY OBLIGATIONS      :  INR 14,000
+
+Closing Balance (30 Jun 2026)  :  INR 1,45,700
+================================================================================
+
+NOTE: DTI = 14,000 / 45,000 = 0.311 → moderate (score 0.7, Clause 3.1(b))
+      Bureau = 670 → moderate (score 0.7, Clause 4.1(b))
+      Tenure = 48 months → low_risk (score 1.0, Clause 5.1(a))
+      Variability = 22% → moderate (score 0.7, Clause 5.2(b))
+      Income stability = min(1.0, 0.7) = 0.7 (variability is the binding constraint)
+      Composite = 0.7*0.40 + 0.7*0.35 + 0.7*0.25 = 0.28+0.245+0.175 = 0.70 → REFER
+================================================================================

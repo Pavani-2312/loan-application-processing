@@ -1,0 +1,63 @@
+================================================================================
+              UNITED BANK OF INDIA — ACCOUNT STATEMENT
+================================================================================
+Account Holder    : Mohan Das
+Account Number    : UBI-XXXXXX-4412
+Account Type      : Savings Account
+Branch            : Salt Lake, Kolkata
+IFSC              : UTBI0SAL123
+
+Statement Period  : 01 January 2026 – 30 June 2026
+Statement Date    : 30 June 2026
+
+Credit Bureau Score (as on 30 June 2026) : 620
+================================================================================
+
+DATE          DESCRIPTION                        CREDIT (INR)    DEBIT (INR)
+------------------------------------------------------------------------
+01 Jan 2026   Opening Balance                                         —
+15 Jan 2026   Project milestone payment           72,000
+10 Jan 2026   Personal Loan EMI (HDFC)                             7,000
+31 Jan 2026   Retainer credit                     15,000
+15 Feb 2026   Personal Loan EMI (HDFC)                             7,000
+28 Feb 2026   Retainer credit                     15,000
+10 Mar 2026   Project milestone payment           80,000
+15 Mar 2026   Personal Loan EMI (HDFC)                             7,000
+31 Mar 2026   Retainer credit                     15,000
+15 Apr 2026   Personal Loan EMI (HDFC)                             7,000
+30 Apr 2026   Retainer credit                     15,000
+12 May 2026   Project milestone payment           48,000
+15 May 2026   Personal Loan EMI (HDFC)                             7,000
+31 May 2026   Retainer credit                     15,000
+10 Jun 2026   Project consulting fee              45,000
+15 Jun 2026   Personal Loan EMI (HDFC)                             7,000
+30 Jun 2026   Retainer credit                     15,000
+------------------------------------------------------------------------
+
+DEPOSIT SUMMARY (Jan–Jun 2026)
+------------------------------------------------------------------------
+Monthly Deposits  :  87,000 | 15,000 | 95,000 | 15,000 | 63,000 | 60,000
+Average Monthly Deposit        :  INR 55,833
+Income Variability (std/mean)  :  50%
+(High variability: large project payments arrive irregularly, 
+ only retainer INR 15,000 is consistent)
+
+RECURRING MONTHLY OBLIGATIONS
+------------------------------------------------------------------------
+Personal Loan EMI (HDFC)       :  INR  7,000
+Two-Wheeler Loan (Bajaj)       :  INR  5,000
+Credit Card Min Due (SBI)      :  INR  2,800
+                                  ---------
+TOTAL MONTHLY OBLIGATIONS      :  INR 14,800
+
+Closing Balance (30 Jun 2026)  :  INR 1,22,400
+================================================================================
+
+NOTE: DTI = 14,800 / 40,000 = 0.37 → moderate (score 0.7, Clause 3.1(b))
+      Bureau = 620 → elevated (score 0.4, Clause 4.1(c))
+      Tenure = 10 months → elevated (score 0.4, Clause 5.1(c))
+      Variability = 50% → high_risk (score 0.0, Clause 5.2(d))
+      Income stability = min(0.4, 0.0) = 0.0 (variability is binding — zero)
+      Composite = 0.7*0.40 + 0.4*0.35 + 0.0*0.25 = 0.28+0.14+0.0 = 0.42 → DECLINE
+      Strong DTI and moderate bureau are outweighed by highly volatile income.
+================================================================================

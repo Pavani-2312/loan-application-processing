@@ -1,0 +1,42 @@
+================================================================================
+                         SALARY SLIP — JUNE 2026
+================================================================================
+Employee Name     : Kavya Nair
+Employee ID       : EMP-40123
+Designation       : Deputy Manager — Finance
+Department        : Finance & Accounts
+
+Employer          : Wipro Ltd.
+Address           : Sarjapur Road, Bengaluru, Karnataka - 560035
+PAN               : ADFKN3456H
+Employment Start  : June 2024
+Employment Tenure : 24 months (2 years)
+
+Pay Period        : 01 June 2026 – 30 June 2026
+Pay Date          : 30 June 2026
+
+--------------------------------------------------------------------------------
+EARNINGS
+--------------------------------------------------------------------------------
+Basic Salary                    :  INR  3,60,000  (monthly: INR 30,000)
+House Rent Allowance (HRA)      :  INR  1,44,000  (monthly: INR 12,000)
+Special Allowance               :  INR  1,20,000  (monthly: INR 10,000)
+Conveyance Allowance            :  INR    48,000  (monthly: INR  4,000)
+Medical Allowance               :  INR    48,000  (monthly: INR  4,000)
+                                  --------------------------------
+GROSS MONTHLY INCOME            :                 INR     60,000
+                                  ================================
+
+--------------------------------------------------------------------------------
+DEDUCTIONS
+--------------------------------------------------------------------------------
+Provident Fund (12%)            :  INR  3,600
+Professional Tax                :  INR    200
+TDS (Income Tax)                :  INR  5,400
+                                  ---------
+TOTAL DEDUCTIONS                :  INR  9,200
+                                  =========
+
+NET MONTHLY SALARY              :  INR 50,800
+================================================================================
+Authorised Signatory: HR Department, Wipro Ltd.

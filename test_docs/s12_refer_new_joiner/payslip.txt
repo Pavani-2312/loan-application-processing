@@ -1,0 +1,41 @@
+================================================================================
+                         SALARY SLIP — JUNE 2026
+================================================================================
+Employee Name     : Sneha Patel
+Employee ID       : EMP-41078
+Designation       : Assistant Manager — Operations
+Department        : Logistics
+
+Employer          : Zydus Lifesciences Ltd.
+Address           : Zydus Corporate Park, Ahmedabad, Gujarat - 380054
+PAN               : BFPSP9912P
+Employment Start  : November 2024
+Employment Tenure : 20 months
+
+Pay Period        : 01 June 2026 – 30 June 2026
+Pay Date          : 30 June 2026
+
+--------------------------------------------------------------------------------
+EARNINGS
+--------------------------------------------------------------------------------
+Basic Salary                    :  INR  2,88,000  (monthly: INR 24,000)
+House Rent Allowance (HRA)      :  INR  1,44,000  (monthly: INR 12,000)
+Special Allowance               :  INR    72,000  (monthly: INR  6,000)
+LTA (annualised monthly)        :  INR    36,000  (monthly: INR  3,000)
+                                  --------------------------------
+GROSS MONTHLY INCOME            :                 INR     45,000
+                                  ================================
+
+--------------------------------------------------------------------------------
+DEDUCTIONS
+--------------------------------------------------------------------------------
+Provident Fund (12%)            :  INR  2,880
+Professional Tax                :  INR    200
+TDS (Income Tax)                :  INR  2,800
+                                  ---------
+TOTAL DEDUCTIONS                :  INR  5,880
+                                  =========
+
+NET MONTHLY SALARY              :  INR 39,120
+================================================================================
+Authorised Signatory: HR Department, Zydus Lifesciences Ltd.

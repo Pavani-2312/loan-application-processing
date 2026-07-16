@@ -1,0 +1,65 @@
+================================================================================
+              ICICI BANK — ACCOUNT STATEMENT
+================================================================================
+Account Holder    : Kiran Reddy
+Account Number    : ICICI-XXXXXX-5512
+Account Type      : Savings Account
+Branch            : Banjara Hills, Hyderabad
+IFSC              : ICIC0004488
+
+Statement Period  : 01 January 2026 – 30 June 2026
+Statement Date    : 30 June 2026
+
+Credit Bureau Score (as on 30 June 2026) : 570
+Note: Score reflects a personal loan written-off (2024) and
+      outstanding dues on a buy-now-pay-later account (settled Mar 2026).
+================================================================================
+
+DATE          DESCRIPTION                        CREDIT (INR)    DEBIT (INR)
+------------------------------------------------------------------------
+01 Jan 2026   Opening Balance                                         —
+10 Jan 2026   Personal Loan EMI (HDFC)                             8,000
+15 Jan 2026   Two-Wheeler Loan EMI (Hero FinCorp)                  5,500
+28 Jan 2026   Part-time gig income               12,000
+10 Feb 2026   Personal Loan EMI (HDFC)                             8,000
+15 Feb 2026   Two-Wheeler Loan EMI (Hero FinCorp)                  5,500
+28 Feb 2026   SALARY CREDIT — Swiggy             40,100
+10 Mar 2026   Personal Loan EMI (HDFC)                             8,000
+15 Mar 2026   Two-Wheeler Loan EMI (Hero FinCorp)                  5,500
+31 Mar 2026   SALARY CREDIT — Swiggy             39,700
+10 Apr 2026   Personal Loan EMI (HDFC)                             8,000
+15 Apr 2026   Two-Wheeler Loan EMI (Hero FinCorp)                  5,500
+30 Apr 2026   SALARY CREDIT — Swiggy             40,300
+10 May 2026   Personal Loan EMI (HDFC)                             8,000
+15 May 2026   Two-Wheeler Loan EMI (Hero FinCorp)                  5,500
+31 May 2026   SALARY CREDIT — Swiggy             39,900
+10 Jun 2026   Personal Loan EMI (HDFC)                             8,000
+15 Jun 2026   Two-Wheeler Loan EMI (Hero FinCorp)                  5,500
+30 Jun 2026   SALARY CREDIT — Swiggy             40,000
+------------------------------------------------------------------------
+
+DEPOSIT SUMMARY (Jan–Jun 2026)
+------------------------------------------------------------------------
+Monthly Deposits  :  40,100 | 39,700 | 40,300 | 39,900 | 40,000 | 40,000
+Average Monthly Deposit        :  INR 40,000
+Income Variability (std/mean)  :  42%
+(Note: Variability driven by irregular pre-employment gig income in Jan-Feb)
+
+RECURRING MONTHLY OBLIGATIONS
+------------------------------------------------------------------------
+Personal Loan EMI (HDFC)           :  INR  8,000
+Two-Wheeler Loan EMI (Hero FinCorp):  INR  5,500
+Credit Card Min Due (ICICI)        :  INR  4,500
+                                      ---------
+TOTAL MONTHLY OBLIGATIONS          :  INR 18,000
+
+Closing Balance (30 Jun 2026)      :  INR 16,500
+================================================================================
+
+NOTE: DTI = 18,000 / 40,000 = 0.45 → elevated (score 0.4, Clause 3.1(c))
+      Bureau = 570 → high_risk (score 0.0, Clause 4.1(d))
+      Tenure = 8 months → elevated (score 0.4, Clause 5.1(c))
+      Variability = 42% → high_risk (score 0.0, Clause 5.2(d))
+      Income stability = min(0.4, 0.0) = 0.0 (variability is binding)
+      Composite = 0.4*0.40 + 0.0*0.35 + 0.0*0.25 = 0.16+0+0 = 0.16 → DECLINE
+================================================================================

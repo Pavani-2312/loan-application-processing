@@ -1,0 +1,59 @@
+================================================================================
+              CANARA BANK — ACCOUNT STATEMENT
+================================================================================
+Account Holder    : Ramesh Iyer
+Account Number    : CNB-XXXXXX-9923
+Account Type      : Savings Account
+Branch            : Mylapore, Chennai
+IFSC              : CNRB0002211
+
+Statement Period  : 01 January 2026 – 30 June 2026
+Statement Date    : 30 June 2026
+
+Credit Bureau Score (as on 30 June 2026) : 660
+================================================================================
+
+DATE          DESCRIPTION                        CREDIT (INR)    DEBIT (INR)
+------------------------------------------------------------------------
+01 Jan 2026   Opening Balance                                         —
+31 Jan 2026   SALARY CREDIT — ITC                 35,500
+05 Feb 2026   Car Loan EMI (Canara)                                 6,500
+08 Feb 2026   Personal Loan EMI (HDFC)                              6,500
+28 Feb 2026   SALARY CREDIT — ITC                 38,900
+05 Mar 2026   Car Loan EMI (Canara)                                 6,500
+08 Mar 2026   Personal Loan EMI (HDFC)                              6,500
+31 Mar 2026   SALARY CREDIT — ITC                 36,200
+05 Apr 2026   Car Loan EMI (Canara)                                 6,500
+08 Apr 2026   Personal Loan EMI (HDFC)                              6,500
+30 Apr 2026   SALARY CREDIT — ITC                 39,100
+05 May 2026   Car Loan EMI (Canara)                                 6,500
+08 May 2026   Personal Loan EMI (HDFC)                              6,500
+31 May 2026   SALARY CREDIT — ITC                 36,800
+05 Jun 2026   Car Loan EMI (Canara)                                 6,500
+08 Jun 2026   Personal Loan EMI (HDFC)                              6,500
+30 Jun 2026   SALARY CREDIT — ITC                 37,500
+------------------------------------------------------------------------
+
+DEPOSIT SUMMARY (Jan–Jun 2026)
+------------------------------------------------------------------------
+Monthly Deposits  :  35,500 | 38,900 | 36,200 | 39,100 | 36,800 | 37,500
+Average Monthly Deposit        :  INR 37,333
+Income Variability (std/mean)  :  22%
+
+RECURRING MONTHLY OBLIGATIONS
+------------------------------------------------------------------------
+Car Loan EMI (Canara)          :  INR  6,500
+Personal Loan EMI (HDFC)       :  INR  6,500
+                                  ---------
+TOTAL MONTHLY OBLIGATIONS      :  INR 13,000
+
+Closing Balance (30 Jun 2026)  :  INR 54,800
+================================================================================
+
+NOTE: DTI = 13,000 / 37,000 = 0.351 → moderate (score 0.7, Clause 3.1(b))
+      Bureau = 660 → moderate (score 0.7, Clause 4.1(b))
+      Tenure = 15 months → moderate (score 0.7, Clause 5.1(b))
+      Variability = 22% → moderate (score 0.7, Clause 5.2(b))
+      Income stability = min(0.7, 0.7) = 0.7
+      Composite = 0.7*0.40 + 0.7*0.35 + 0.7*0.25 = 0.28+0.245+0.175 = 0.70 → REFER
+================================================================================

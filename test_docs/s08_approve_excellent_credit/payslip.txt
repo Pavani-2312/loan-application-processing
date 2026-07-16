@@ -1,0 +1,41 @@
+================================================================================
+                         SALARY SLIP — JUNE 2026
+================================================================================
+Employee Name     : Ananya Krishnamurthy
+Employee ID       : EMP-71234
+Designation       : Product Manager
+Department        : Product & Strategy
+
+Employer          : Amazon India Pvt. Ltd.
+Address           : Prestige Shantiniketan, Whitefield, Bengaluru, Karnataka - 560048
+PAN               : BFJAK5674L
+Employment Start  : March 2021
+Employment Tenure : 63 months (5 years 3 months)
+
+Pay Period        : 01 June 2026 – 30 June 2026
+Pay Date          : 30 June 2026
+
+--------------------------------------------------------------------------------
+EARNINGS
+--------------------------------------------------------------------------------
+Basic Salary                    :  INR  5,40,000  (monthly: INR 45,000)
+House Rent Allowance (HRA)      :  INR  2,16,000  (monthly: INR 18,000)
+Special Allowance               :  INR  1,44,000  (monthly: INR 12,000)
+Food Coupons                    :  INR    30,000  (monthly: INR  2,500)
+                                  --------------------------------
+GROSS MONTHLY INCOME            :                 INR     77,500
+                                  ================================
+
+--------------------------------------------------------------------------------
+DEDUCTIONS
+--------------------------------------------------------------------------------
+Provident Fund (12%)            :  INR  5,400
+Professional Tax                :  INR    200
+TDS (Income Tax)                :  INR 12,000
+                                  ---------
+TOTAL DEDUCTIONS                :  INR 17,600
+                                  =========
+
+NET MONTHLY SALARY              :  INR 59,900
+================================================================================
+Authorised Signatory: HR Department, Amazon India Pvt. Ltd.

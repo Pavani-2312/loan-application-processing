@@ -1,0 +1,62 @@
+================================================================================
+              FEDERAL BANK — ACCOUNT STATEMENT
+================================================================================
+Account Holder    : Pradeep Nambiar
+Account Number    : FED-XXXXXX-3312
+Account Type      : Savings Account
+Branch            : Calicut Main, Kerala
+IFSC              : FDRL0001122
+
+Statement Period  : 01 January 2026 – 30 June 2026
+Statement Date    : 30 June 2026
+
+Credit Bureau Score (as on 30 June 2026) : 595
+================================================================================
+
+DATE          DESCRIPTION                        CREDIT (INR)    DEBIT (INR)
+------------------------------------------------------------------------
+01 Jan 2026   Opening Balance                                         —
+15 Jan 2026   Personal Loan EMI (Bajaj)                            4,500
+25 Jan 2026   Credit Card Min Due (Fed Bank)                       2,000
+31 Jan 2026   SALARY CREDIT — Mphasis            22,000
+15 Feb 2026   Personal Loan EMI (Bajaj)                            4,500
+25 Feb 2026   Credit Card Min Due (Fed Bank)                       2,000
+28 Feb 2026   SALARY CREDIT — Mphasis            30,500
+15 Mar 2026   Personal Loan EMI (Bajaj)                            4,500
+25 Mar 2026   Credit Card Min Due (Fed Bank)                       2,000
+31 Mar 2026   SALARY CREDIT — Mphasis            25,000
+15 Apr 2026   Personal Loan EMI (Bajaj)                            4,500
+25 Apr 2026   Credit Card Min Due (Fed Bank)                       2,000
+30 Apr 2026   SALARY CREDIT — Mphasis            33,000
+15 May 2026   Personal Loan EMI (Bajaj)                            4,500
+25 May 2026   Credit Card Min Due (Fed Bank)                       2,000
+31 May 2026   SALARY CREDIT — Mphasis            24,500
+15 Jun 2026   Personal Loan EMI (Bajaj)                            4,500
+25 Jun 2026   Credit Card Min Due (Fed Bank)                       2,000
+30 Jun 2026   SALARY CREDIT — Mphasis            29,000
+------------------------------------------------------------------------
+
+DEPOSIT SUMMARY (Jan–Jun 2026)
+------------------------------------------------------------------------
+Monthly Deposits  :  22,000 | 30,500 | 25,000 | 33,000 | 24,500 | 29,000
+Average Monthly Deposit        :  INR 27,333
+Income Variability (std/mean)  :  30%
+
+RECURRING MONTHLY OBLIGATIONS
+------------------------------------------------------------------------
+Personal Loan EMI (Bajaj)      :  INR  4,500
+Credit Card Min Due (Fed Bank) :  INR  2,000
+Vehicle Loan EMI (Federal)     :  INR  7,000
+                                  ---------
+TOTAL MONTHLY OBLIGATIONS      :  INR 13,500
+
+Closing Balance (30 Jun 2026)  :  INR  9,800
+================================================================================
+
+NOTE: DTI = 13,500 / 28,000 = 0.482 → elevated (score 0.4, Clause 3.1(c))
+      Bureau = 595 → elevated (score 0.4, Clause 4.1(c))
+      Tenure = 9 months → elevated (score 0.4, Clause 5.1(c))
+      Variability = 30% → elevated (score 0.4, Clause 5.2(c))
+      Income stability = min(0.4, 0.4) = 0.4
+      Composite = 0.4*0.40 + 0.4*0.35 + 0.4*0.25 = 0.16+0.14+0.10 = 0.40 → DECLINE
+================================================================================

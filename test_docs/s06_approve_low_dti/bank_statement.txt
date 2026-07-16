@@ -1,0 +1,52 @@
+================================================================================
+              SOUTH INDIAN BANK — ACCOUNT STATEMENT
+================================================================================
+Account Holder    : Meera Pillai
+Account Number    : SIB-XXXXXX-8821
+Account Type      : Savings Account
+Branch            : Pattom, Thiruvananthapuram
+IFSC              : SIBL0000771
+
+Statement Period  : 01 January 2026 – 30 June 2026
+Statement Date    : 30 June 2026
+
+Credit Bureau Score (as on 30 June 2026) : 755
+================================================================================
+
+DATE          DESCRIPTION                        CREDIT (INR)    DEBIT (INR)
+------------------------------------------------------------------------
+01 Jan 2026   Opening Balance                                         —
+31 Jan 2026   SALARY CREDIT — CET                 60,100
+05 Feb 2026   Car Loan EMI (SIB)                                   6,000
+28 Feb 2026   SALARY CREDIT — CET                 59,900
+05 Mar 2026   Car Loan EMI (SIB)                                   6,000
+31 Mar 2026   SALARY CREDIT — CET                 60,200
+05 Apr 2026   Car Loan EMI (SIB)                                   6,000
+30 Apr 2026   SALARY CREDIT — CET                 60,000
+05 May 2026   Car Loan EMI (SIB)                                   6,000
+31 May 2026   SALARY CREDIT — CET                 59,700
+05 Jun 2026   Car Loan EMI (SIB)                                   6,000
+30 Jun 2026   SALARY CREDIT — CET                 60,100
+------------------------------------------------------------------------
+
+DEPOSIT SUMMARY (Jan–Jun 2026)
+------------------------------------------------------------------------
+Monthly Deposits  :  60,100 | 59,900 | 60,200 | 60,000 | 59,700 | 60,100
+Average Monthly Deposit        :  INR 60,000
+Income Variability (std/mean)  :  3%
+
+RECURRING MONTHLY OBLIGATIONS
+------------------------------------------------------------------------
+Car Loan EMI (SIB)             :  INR 6,000
+                                  ---------
+TOTAL MONTHLY OBLIGATIONS      :  INR 6,000
+
+Closing Balance (30 Jun 2026)  :  INR 4,32,100
+================================================================================
+
+NOTE: DTI = 6,000 / 60,000 = 0.10 → low_risk (Clause 3.1(a))
+      Bureau = 755 → low_risk (Clause 4.1(a))
+      Tenure = 94 months → low_risk (Clause 5.1(a))
+      Variability = 3% → low_risk (Clause 5.2(a))
+      Composite = 1.00 → APPROVE
+================================================================================
