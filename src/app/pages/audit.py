@@ -137,7 +137,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-hcols = st.columns([2, 1.2, 1.2, 0.8, 0.8, 0.5, 1.8, 1.2])
+hcols = st.columns([2, 1.2, 1.2, 0.8, 0.8, 0.5, 1.8, 1.6])
 for col, lbl in zip(hcols, ["Application", "Rec.", "Decision", "Match", "Fairness", "🚩", "Decided by", "Action"]):
     col.markdown(
         f'<p style="font-size:0.72rem;font-weight:500;text-transform:uppercase;'
@@ -157,7 +157,7 @@ if not filtered:
 else:
     for r in filtered:
         with st.container(border=True):
-            ca, cb, cc, cd, ce, cf, cg, ch = st.columns([2, 1.2, 1.2, 0.8, 0.8, 0.5, 1.8, 1.2])
+            ca, cb, cc, cd, ce, cf, cg, ch = st.columns([2, 1.2, 1.2, 0.8, 0.8, 0.5, 1.8, 1.6])
             with ca:
                 st.markdown(
                     f'<p style="font-weight:500;font-size:0.88rem;margin:0;color:#1C1B1F;">{r["short_id"]}</p>'
@@ -193,7 +193,7 @@ else:
                     unsafe_allow_html=True,
                 )
             with ch:
-                if st.button("🔍 View audit", key=f"av_{r['full_id']}"):
+                if st.button("🔍 View Audit", key=f"av_{r['full_id']}"):
                     st.session_state["review_application_id"] = r["full_id"]
                     st.session_state["audit_mode"] = True
                     st.switch_page("pages/audit_detail.py")
